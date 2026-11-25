@@ -90,9 +90,9 @@ fs.writeFileSync(P(`dist/img/perfil/cifras-oscuro${S}.svg`), svg('#f0f6fc', '#91
 // ---------- README del perfil ----------
 // El encabezado (lema, botones y frase) lo escribió a mano su autor: no cambiarlo. Sin captura del panel ni presentación personal.
 const I = 'https://virtuanista.github.io/img/', HUB = `https://virtuanista.github.io/${en ? 'en/' : ''}#`;
-const PLAY = ['parkour', 'ceniza', 'retro', 'myrmex', 'isleta'], TOOLS = ['dataminer', 'atlas', 'prisma', 'gamehub', 'vxtop', 'soniditos'];
+const PLAY = ['parkour', 'ceniza', 'retro', 'myrmex', 'isleta', 'neon'], TOOLS = ['dataminer', 'atlas', 'prisma', 'gamehub', 'vxtop', 'soniditos'];
 const SUF = en ? '-en' : '';
-const go = p => p.type === 'juego' ? t('Jugar') : p.stage === 'web' ? t('Abrir') : p.stage === 'release' && !p.web ? t('Descargar') : p.web ? t('Web') : t('Código');
+const go = p => p.type === 'juego' && p.web ? t('Jugar') : p.stage === 'web' ? t('Abrir') : p.stage === 'release' && !p.web ? t('Descargar') : p.web ? t('Web') : t('Código');
 const to = p => p.web ?? (G(p).release ? `https://github.com/${p.repo}/releases/latest` : `https://github.com/${p.repo}`);
 // 400 px: dos por fila en el ordenador y una en el móvil
 const cell = p => `<a href="${to(p)}"><picture><source media="(prefers-color-scheme: dark)" srcset="img/${p.id}-oscuro${SUF}.webp"><img src="img/${p.id}-claro${SUF}.webp" width="400" alt="${e(p.name)}: ${e(p.sum)} ${go(p)}"></picture></a>`;
