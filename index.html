@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>virtuanista (Pepe Alvar): juegos y herramientas</title>
+<meta name="description" content="Portfolio de virtuanista (Pepe Alvar): juegos de navegador, herramientas y atlas interactivos.">
+<meta property="og:title" content="virtuanista (Pepe Alvar)">
+<meta property="og:description" content="Juegos de navegador, herramientas y atlas interactivos.">
+<meta property="og:image" content="https://virtuanista.github.io/img/og.jpg">
+<meta property="og:url" content="https://virtuanista.github.io/">
+<link rel="icon" href="img/avatar.png">
+<style>
+:root { --bg: #fbf7f0; --ink: #17161c; --soft: #5f5a63; --line: #ddd5c8; --accent: #b84a06; }
+@media (prefers-color-scheme: dark) { :root { --bg: #131217; --ink: #f3eee6; --soft: #aaa4ad; --line: #35323c; --accent: #ff9142; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 "Segoe UI", system-ui, sans-serif; }
+a { color: inherit; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.wrap { max-width: 1120px; margin: auto; padding: 0 20px; }
+header { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; padding-block: 72px 56px; }
+h1 { margin: 0; font-size: clamp(44px, 9vw, 104px); line-height: .95; letter-spacing: -.04em; }
+header p { max-width: 34em; margin: 22px 0 0; font-size: 20px; color: var(--soft); }
+header img { width: clamp(84px, 14vw, 148px); height: auto; border-radius: 50%; }
+nav { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 24px; font-weight: 600; }
+h2 { margin: 0 0 24px; padding-top: 20px; border-top: 2px solid var(--ink); font-size: 28px; letter-spacing: -.02em; }
+section { padding-bottom: 64px; }
+.grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 36px 24px; }
+article { grid-column: span 2; }
+article.big { grid-column: span 3; }
+article img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; background: var(--line); }
+h3 { margin: 14px 0 4px; font-size: 21px; line-height: 1.25; }
+article p { margin: 0 0 8px; color: var(--soft); }
+.links { display: flex; gap: 18px; font-weight: 600; }
+ul { list-style: none; margin: 0; padding: 0; }
+li { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+li span { color: var(--soft); }
+li a { font-weight: 600; }
+footer { padding: 8px 0 48px; text-align: center; font-size: 15px; color: var(--soft); }
+footer img { display: block; max-width: 100%; margin: 12px auto; }
+@media (max-width: 760px) { article, article.big { grid-column: 1 / -1; } header { padding-top: 40px; grid-template-columns: 1fr; } header img { order: -1; } li { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <h1>virtuanista</h1>
+    <p>Soy Pepe Alvar. Hago juegos que se juegan en el navegador, herramientas y cosas que se ven en 3D.</p>
+    <nav aria-label="Principal"><a href="#juegos">Juegos</a><a href="#herramientas">Herramientas</a><a href="#atlas">Atlas</a><a href="https://github.com/virtuanista">GitHub</a><a href="https://www.linkedin.com/in/pepe-alvar/">LinkedIn</a></nav>
+  </div>
+  <img src="img/avatar.png" width="148" height="148" alt="">
+</header>
+<main>
+<section id="juegos">
+  <h2>Juegos</h2>
+  <div class="grid">
+    <article class="big"><img src="img/ceniza.webp" alt="Combate en CENIZA"><h3>CENIZA: Protocolo Bastión</h3><p>Shooter de supervivencia por oleadas en primera persona, con arte, sonido y música procedurales.</p><div class="links"><a href="https://virtuanista.github.io/ceniza-protocolo-bastion/">Jugar a CENIZA</a><a href="https://github.com/virtuanista/ceniza-protocolo-bastion">Código</a></div></article>
+    <article class="big"><img src="img/myrmex.webp" alt="Superficie de la colonia en MYRMEX"><h3>MYRMEX</h3><p>Estrategia en tiempo real con colonias de hormigas: excava, cría castas, investiga y conquista.</p><div class="links"><a href="https://virtuanista.github.io/myrmex/">Jugar a MYRMEX</a><a href="https://github.com/virtuanista/myrmex">Código</a></div></article>
+    <article><img loading="lazy" src="img/brain.webp" alt="La cocina vista por una mosca"><h3>In My Brain</h3><p>Una cocina y la misma mañana, vivida desde 34 percepciones distintas.</p><div class="links"><a href="https://virtuanista.github.io/in-my-brain/">Jugar a In My Brain</a><a href="https://github.com/virtuanista/in-my-brain">Código</a></div></article>
+    <article><img loading="lazy" src="img/grimorio.webp" alt="Libro de hechizos de Grimorio"><h3>Grimorio</h3><p>Lanza magia trazando runas en el aire dentro de una cripta.</p><div class="links"><a href="https://virtuanista.github.io/magical/">Jugar a Grimorio</a><a href="https://github.com/virtuanista/magical">Código</a></div></article>
+    <article><img loading="lazy" src="img/isleta.webp" alt="Pantalla de título de Isleta"><h3>Isleta</h3><p>Construye y decora tu propia isla. También en el móvil.</p><div class="links"><a href="https://virtuanista.github.io/isleta/">Jugar a Isleta</a><a href="https://github.com/virtuanista/isleta">Código</a></div></article>
+    <article class="big"><img loading="lazy" src="img/retro.webp" alt="Jefe de Retro Fantasy Shooter"><h3>Retro Fantasy Shooter</h3><p>Shoot'em up de 8 bits con 7 zonas, 8 jefes y música generada por código.</p><div class="links"><a href="https://virtuanista.github.io/retro-fantasy-shooter/">Jugar a Retro Fantasy Shooter</a><a href="https://github.com/virtuanista/retro-fantasy-shooter">Código</a></div></article>
+    <article class="big"><img loading="lazy" src="img/parkour.webp" alt="Comparación A/B de Parkour Template"><h3>Parkour Template</h3><p>Plantilla MIT de parkour en tercera persona para empezar tu propio juego.</p><div class="links"><a href="https://virtuanista.github.io/parkour-template/">Probar Parkour Template</a><a href="https://github.com/virtuanista/parkour-template">Código</a></div></article>
+  </div>
+</section>
+<section id="herramientas">
+  <h2>Herramientas</h2>
+  <ul>
+    <li><a href="https://github.com/vxtop/vxtop">vxtop</a><span>Observatorio 3D de tu equipo, de solo lectura: carpetas y programas como cubos, y actividad en vivo.</span></li>
+    <li><a href="https://github.com/virtuanista/data-miner">DataMiner</a><span>Busca en 20 fuentes a la vez, extrae el contenido y descarga los ficheros. Para Windows.</span></li>
+    <li><a href="https://github.com/soniditos/soniditos-desktop">soniditos desktop</a><span>Aplicación de escritorio multiplataforma de soniditos.</span></li>
+  </ul>
+</section>
+<section id="atlas">
+  <h2>Atlas</h2>
+  <div class="grid">
+    <article class="big"><img loading="lazy" src="img/osint.webp" alt="Grafo de OSINT Atlas"><h3>OSINT Atlas</h3><p>3.500 fuentes OSINT en un grafo fractal.</p><div class="links"><a href="https://virtuanista.github.io/osint-atlas/">Explorar OSINT Atlas</a><a href="https://github.com/virtuanista/osint-atlas">Código</a></div></article>
+    <article class="big"><img loading="lazy" src="img/knowledge.webp" alt="Grafo de Knowledge Atlas"><h3>Knowledge Atlas</h3><p>Cinco grafos: IA, algoritmos, estándares web, datasets y juegos.</p><div class="links"><a href="https://virtuanista.github.io/knowledge-atlas/">Explorar Knowledge Atlas</a><a href="https://github.com/virtuanista/knowledge-atlas">Código</a></div></article>
+  </div>
+</section>
+</main>
+<footer>Hecho por <a href="https://github.com/virtuanista">virtu 🎣</a><img src="https://open.soniditos.com/cat_footer.svg" alt="Gatito">Copyright © 2026</footer>
+</div>
+</body>
+</html>
