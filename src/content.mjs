@@ -71,7 +71,7 @@ export const projects = [
     why: 'Una lista de miles de enlaces no se puede recorrer. Un mapa con niveles, sí.',
     tech: ['OSINT: 3.500 fuentes en 21 clusters y 100 subclusters', 'Cinco grafos más: IA, algoritmos, estándares web, datasets y juegos', 'TF-IDF y k-means deterministas', 'Espiral de Vogel y relajación de círculos', 'Sin dependencias en la web'], pend: ['Algunos nombres de clusters automáticos son ruidosos', 'Las listas de origen pueden tener enlaces obsoletos'] },
   { id: 'dataminer', since: '2026-11-22', repo: `${V}/data-miner`, name: 'DataMiner', type: 'ia', stage: 'release', web: W + 'data-miner/', stack: ['Python', 'JavaScript', 'WebGL'], img: ['dataminer'],
-    sum: 'Busca en 20 fuentes a la vez, extrae el contenido y descarga los ficheros.',
+    sum: 'Busca en hasta 45 fuentes a la vez, extrae el contenido y descarga los ficheros.',
     why: 'Pasar de «buscar» a «tener»: todo acaba en disco, limpio y con su procedencia.',
     tech: ['Contenido limpio en Markdown', 'Respeta robots.txt y no evita captchas', 'Deduplica por URL y por hash', 'Mapa WebGL de los hallazgos', 'Lo descargado nunca se ejecuta'], pend: ['El servicio de sincronización en la nube no existe todavía'] },
   { id: 'parkour', since: '2026-11-25', repo: `${V}/parkour-template`, name: 'Parkour Template', type: 'motor', stage: 'web', web: W + 'parkour-template/', stack: ['TypeScript', 'three.js', 'Vitest', 'Playwright'], img: ['parkour', 'parkour-2'],

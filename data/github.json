@@ -1,15 +1,25 @@
 {
- "at": "2026-11-25T14:40:03.761Z",
+ "at": "2026-11-25T15:57:12.333Z",
  "repos": {
   "virtuanista/llmql": {
    "created": "2025-02-20T22:35:24Z",
-   "pushed": "2026-11-16T14:53:53Z",
+   "pushed": "2026-11-25T15:36:17Z",
    "license": "MIT",
    "lang": {
     "Python": 2621
    },
-   "commits": 7,
+   "commits": 9,
    "last": [
+    {
+     "d": "2026-11-25T15:56:33Z",
+     "m": "No registra credenciales, usa rutas relativas y la CLI acepta la pregunta como argumento",
+     "u": "https://github.com/virtuanista/llmql/commit/521ce3e14fb0c59cd8932e2419d6fecb3dff9f4a"
+    },
+    {
+     "d": "2026-11-25T15:36:16Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/llmql/commit/353c8515e5ff21050b3de8db7c2bd9b16a5c4f8b"
+    },
     {
      "d": "2026-07-06T11:06:28Z",
      "m": "Update README.md",
@@ -19,16 +29,6 @@
      "d": "2026-07-06T11:01:08Z",
      "m": "Update example.env",
      "u": "https://github.com/virtuanista/llmql/commit/48ba4d35945afa4fdc4c87e749fa5fb63b2582f4"
-    },
-    {
-     "d": "2025-06-24T15:35:45Z",
-     "m": "Update README.md",
-     "u": "https://github.com/virtuanista/llmql/commit/118454524546686a912e93bd7d5a203fff810741"
-    },
-    {
-     "d": "2025-04-22T18:36:40Z",
-     "m": "Update LICENSE",
-     "u": "https://github.com/virtuanista/llmql/commit/67c6de2856dc4ef482ed452b1e6931a873edb16f"
     }
    ],
    "release": null,
@@ -36,14 +36,24 @@
   },
   "virtuanista/chatgpt-walker": {
    "created": "2025-04-19T08:10:58Z",
-   "pushed": "2026-11-25T13:08:43Z",
+   "pushed": "2026-11-25T15:56:59Z",
    "license": "MIT",
    "lang": {
     "HTML": 13616,
     "Python": 4886
    },
-   "commits": 8,
+   "commits": 10,
    "last": [
+    {
+     "d": "2026-11-25T15:56:57Z",
+     "m": "Corrige el README para que coincida con el código",
+     "u": "https://github.com/virtuanista/chatgpt-walker/commit/fa1098d17d3a270f1d7eb4afc1e1e434eb559c74"
+    },
+    {
+     "d": "2026-11-25T15:36:22Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/chatgpt-walker/commit/1d633904662aa38fedb3ab8c4b390945c467a09b"
+    },
     {
      "d": "2026-11-25T13:08:39Z",
      "m": "Separa build y despliegue de Pages",
@@ -53,35 +63,35 @@
      "d": "2026-11-25T13:04:41Z",
      "m": "Restaura los enlaces a la web",
      "u": "https://github.com/virtuanista/chatgpt-walker/commit/55c0f5d08d41cccb0d93ed74d31c81850b68e982"
-    },
-    {
-     "d": "2026-11-25T12:36:39Z",
-     "m": "Quita enlaces a la web no publicada",
-     "u": "https://github.com/virtuanista/chatgpt-walker/commit/c17267e37e705af23d7499addcdddb4e46d52813"
-    },
-    {
-     "d": "2026-11-16T15:12:10Z",
-     "m": "Versión web en GitHub Pages",
-     "u": "https://github.com/virtuanista/chatgpt-walker/commit/378801dc5cad08e8bbaf46db25467d2385729f79"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "Publicar en GitHub Pages",
-    "u": "https://github.com/virtuanista/chatgpt-walker/actions/runs/45620600012"
+    "u": "https://github.com/virtuanista/chatgpt-walker/actions/runs/45647067463"
    }
   },
   "virtuanista/vector-explorer": {
    "created": "2025-05-12T12:52:11Z",
-   "pushed": "2026-11-16T14:53:57Z",
+   "pushed": "2026-11-25T15:36:14Z",
    "license": "MIT",
    "lang": {
     "Python": 24441,
     "Batchfile": 514
    },
-   "commits": 10,
+   "commits": 12,
    "last": [
+    {
+     "d": "2026-11-25T15:56:54Z",
+     "m": "Corrige el README para que coincida con el código",
+     "u": "https://github.com/virtuanista/vector-explorer/commit/70369a0381fbda2a9a2fce2d5b00110b12c528c9"
+    },
+    {
+     "d": "2026-11-25T15:36:13Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/vector-explorer/commit/1628c49e6a37448c53be07b7f9715cb8f6840538"
+    },
     {
      "d": "2026-11-16T14:46:15Z",
      "m": "README: URL de clonado correcta",
@@ -91,16 +101,6 @@
      "d": "2025-08-18T02:14:50Z",
      "m": "Actualizar README.md",
      "u": "https://github.com/virtuanista/vector-explorer/commit/422d4735776a3158b9b08fceb6f1d4817ce0d510"
-    },
-    {
-     "d": "2025-05-25T03:05:58Z",
-     "m": "fixing problems",
-     "u": "https://github.com/virtuanista/vector-explorer/commit/bbd041cedde11f91517bf37207665596fd607847"
-    },
-    {
-     "d": "2025-05-25T03:04:09Z",
-     "m": "fixing problems",
-     "u": "https://github.com/virtuanista/vector-explorer/commit/08b3b76bfb6e4e138c7c7c252a5c421118356538"
     }
    ],
    "release": null,
@@ -108,13 +108,23 @@
   },
   "virtuanista/node-criteria": {
    "created": "2025-07-08T22:57:44Z",
-   "pushed": "2026-11-16T14:53:59Z",
+   "pushed": "2026-11-25T15:36:12Z",
    "license": "MIT",
    "lang": {
     "Python": 18674
    },
-   "commits": 4,
+   "commits": 6,
    "last": [
+    {
+     "d": "2026-11-25T15:56:51Z",
+     "m": "Corrige el README para que coincida con el código",
+     "u": "https://github.com/virtuanista/node-criteria/commit/1e8cdb93b6f22b34b5a449526ec9af6736d49d6f"
+    },
+    {
+     "d": "2026-11-25T15:36:10Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/node-criteria/commit/b89c246f599a4759e8c744b84bb4550f7627a2d4"
+    },
     {
      "d": "2026-11-16T14:46:15Z",
      "m": "README: URL de clonado correcta",
@@ -124,16 +134,6 @@
      "d": "2025-07-09T07:44:15Z",
      "m": "Update README.md",
      "u": "https://github.com/virtuanista/node-criteria/commit/46c0e80ba3d629bb61469d5da4076ab46ecdc54b"
-    },
-    {
-     "d": "2025-07-09T02:52:23Z",
-     "m": "update readme",
-     "u": "https://github.com/virtuanista/node-criteria/commit/2a09abd1bd344dc7c8f9487573908c068d082945"
-    },
-    {
-     "d": "2025-07-09T02:51:07Z",
-     "m": "first commit",
-     "u": "https://github.com/virtuanista/node-criteria/commit/61bd0bb2b9f619173e9649dccdf00edc17d50043"
     }
    ],
    "release": null,
@@ -141,15 +141,25 @@
   },
   "soniditos/soniditos-desktop": {
    "created": "2025-08-03T12:03:07Z",
-   "pushed": "2026-11-16T15:16:23Z",
+   "pushed": "2026-11-25T15:57:08Z",
    "license": "MIT",
    "lang": {
     "JavaScript": 26948,
     "HTML": 14636,
     "NSIS": 786
    },
-   "commits": 16,
+   "commits": 18,
    "last": [
+    {
+     "d": "2026-11-25T15:57:06Z",
+     "m": "Actualiza Electron a la 42 y corrige la presencia en Discord",
+     "u": "https://github.com/soniditos/soniditos-desktop/commit/1bc8994b32bed3776c95c6cab5b8e81ff4e9bfae"
+    },
+    {
+     "d": "2026-11-25T15:38:35Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/soniditos/soniditos-desktop/commit/b15f7a68788d54f70678523e59bd8c12705eac33"
+    },
     {
      "d": "2026-08-11T00:47:35Z",
      "m": "chore: bump version to 2.0.5",
@@ -159,16 +169,6 @@
      "d": "2026-08-11T00:45:19Z",
      "m": "fix: add setPermissionCheckHandler for microphone access",
      "u": "https://github.com/soniditos/soniditos-desktop/commit/2a2d664fc51b93b680bc8d5337822a05e42e14f9"
-    },
-    {
-     "d": "2026-08-11T00:37:00Z",
-     "m": "chore: bump version to 2.0.4",
-     "u": "https://github.com/soniditos/soniditos-desktop/commit/045e38841d76317b4a52ffb3f660481bac2d57c7"
-    },
-    {
-     "d": "2026-08-11T00:32:18Z",
-     "m": "Merge pull request #1 from soniditos/fix/voice-search-mic-permission",
-     "u": "https://github.com/soniditos/soniditos-desktop/commit/c0e9978af57b8edd87f26965ca69e70de573c5f9"
     }
    ],
    "release": "v2.0.5",
@@ -176,7 +176,7 @@
   },
   "vxtop/vxtop": {
    "created": "2026-11-15T11:31:36Z",
-   "pushed": "2026-11-25T13:53:24Z",
+   "pushed": "2026-11-25T15:35:16Z",
    "license": "Apache-2.0",
    "lang": {
     "JavaScript": 188653,
@@ -184,8 +184,13 @@
     "PowerShell": 16602,
     "VBScript": 2779
    },
-   "commits": 13,
+   "commits": 14,
    "last": [
+    {
+     "d": "2026-11-25T15:35:15Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/vxtop/vxtop/commit/04727eb3febb518ce661462240c0809cec2d605b"
+    },
     {
      "d": "2026-11-25T13:53:20Z",
      "m": "Enlaza Prisma como proyecto aparte",
@@ -200,31 +205,31 @@
      "d": "2026-11-16T14:44:11Z",
      "m": "docs: corregir enlace de la arquitectura",
      "u": "https://github.com/vxtop/vxtop/commit/1a83f11c8cf6a7fe81eb413cff30575af537c774"
-    },
-    {
-     "d": "2026-11-16T14:43:59Z",
-     "m": "Documentación en español: registro de cambios, contribución, hoja de ruta, seguridad, arquitectura y plantilla",
-     "u": "https://github.com/vxtop/vxtop/commit/38d4476d73abc0b850de43d6343fc0c7392f753b"
     }
    ],
    "release": "v0.6.0",
    "ci": {
     "ok": true,
     "name": "CI",
-    "u": "https://github.com/vxtop/vxtop/actions/runs/45628186128"
+    "u": "https://github.com/vxtop/vxtop/actions/runs/45646856729"
    }
   },
   "virtuanista/ceniza-protocolo-bastion": {
    "created": "2026-11-16T12:37:41Z",
-   "pushed": "2026-11-25T12:12:50Z",
+   "pushed": "2026-11-25T15:38:11Z",
    "license": "MIT",
    "lang": {
     "JavaScript": 579819,
     "CSS": 20103,
     "HTML": 980
    },
-   "commits": 15,
+   "commits": 16,
    "last": [
+    {
+     "d": "2026-11-25T15:38:09Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/ceniza-protocolo-bastion/commit/473708a31da19b085f0ddcecb00f3b55aabce3f3"
+    },
     {
      "d": "2026-11-25T12:12:46Z",
      "m": "Unifica el footer del README",
@@ -239,31 +244,31 @@
      "d": "2026-11-23T18:33:46Z",
      "m": "Ortografía: «Atúrdelo» en la ficha del Desgarrador",
      "u": "https://github.com/virtuanista/ceniza-protocolo-bastion/commit/0f79f0172cf4d131b6e1800a92befca3c9ba06ea"
-    },
-    {
-     "d": "2026-11-23T18:33:46Z",
-     "m": "El registro de bajas se desvanece a los pocos segundos",
-     "u": "https://github.com/virtuanista/ceniza-protocolo-bastion/commit/b6ba8c7a3b63ba2c0d22d598a6d12f4cf6f0f237"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "Publicar en GitHub Pages",
-    "u": "https://github.com/virtuanista/ceniza-protocolo-bastion/actions/runs/45611609894"
+    "u": "https://github.com/virtuanista/ceniza-protocolo-bastion/actions/runs/45647402003"
    }
   },
   "virtuanista/myrmex": {
    "created": "2026-11-16T12:37:49Z",
-   "pushed": "2026-11-25T12:13:10Z",
+   "pushed": "2026-11-25T15:38:14Z",
    "license": "MIT",
    "lang": {
     "TypeScript": 510050,
     "CSS": 29171,
     "HTML": 1376
    },
-   "commits": 16,
+   "commits": 17,
    "last": [
+    {
+     "d": "2026-11-25T15:38:12Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/myrmex/commit/9b06f283c49c41f7b75c7b0e0cb71ab00ea73d2e"
+    },
     {
      "d": "2026-11-25T12:13:06Z",
      "m": "Unifica el footer del README",
@@ -278,30 +283,35 @@
      "d": "2026-11-23T18:24:02Z",
      "m": "Consejo de defensa: «garitas ácidas» en vez de «torres»",
      "u": "https://github.com/virtuanista/myrmex/commit/c78aa8837815ac27f71fc97607fd0fc85a4f9f0c"
-    },
-    {
-     "d": "2026-11-23T18:22:58Z",
-     "m": "Unificar detalles de texto: «Tab», «…» y «garitas»",
-     "u": "https://github.com/virtuanista/myrmex/commit/8a417598e80f6beca7a9249b6572a6f5ec4a0914"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "Publicar en GitHub Pages",
-    "u": "https://github.com/virtuanista/myrmex/actions/runs/45611661582"
+    "u": "https://github.com/virtuanista/myrmex/actions/runs/45647409674"
    }
   },
   "virtuanista/retro-fantasy-shooter": {
    "created": "2026-11-16T12:37:56Z",
-   "pushed": "2026-11-25T12:13:22Z",
+   "pushed": "2026-11-25T15:57:05Z",
    "license": "MIT",
    "lang": {
     "JavaScript": 190476,
     "HTML": 1477
    },
-   "commits": 13,
+   "commits": 15,
    "last": [
+    {
+     "d": "2026-11-25T15:57:03Z",
+     "m": "Corrige el README para que coincida con el código",
+     "u": "https://github.com/virtuanista/retro-fantasy-shooter/commit/54e7a86230be9dcab07c8e0a1eb81744799fa3cc"
+    },
+    {
+     "d": "2026-11-25T15:38:06Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/retro-fantasy-shooter/commit/26c0e9666aa7aa99cffb0032a319f100fef72ebd"
+    },
     {
      "d": "2026-11-25T12:13:18Z",
      "m": "Unifica el footer del README",
@@ -311,35 +321,30 @@
      "d": "2026-11-23T18:16:54Z",
      "m": "Textos: concordancia «QUEDA 1 / QUEDAN N» al destruir bases y «¡BONUS!» con apertura",
      "u": "https://github.com/virtuanista/retro-fantasy-shooter/commit/7be839a26ab8b0271730d9cf4510af0fe4316e17"
-    },
-    {
-     "d": "2026-11-23T18:16:54Z",
-     "m": "Textos: la ayuda del título nunca se sale de pantalla y FLASH BURST muestra su tecla",
-     "u": "https://github.com/virtuanista/retro-fantasy-shooter/commit/27d34c5854740f47d9470a81799df4a193a19036"
-    },
-    {
-     "d": "2026-11-23T18:12:57Z",
-     "m": "Pruebas: adaptar la comprobación de récords a las partidas sin puntos",
-     "u": "https://github.com/virtuanista/retro-fantasy-shooter/commit/a51f09919ed59e58460b472335b1a99cb2b14ae0"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "Publicar en GitHub Pages",
-    "u": "https://github.com/virtuanista/retro-fantasy-shooter/actions/runs/45611693107"
+    "u": "https://github.com/virtuanista/retro-fantasy-shooter/actions/runs/45647395055"
    }
   },
   "virtuanista/password-generator": {
    "created": "2026-11-16T13:31:18Z",
-   "pushed": "2026-11-25T13:08:46Z",
+   "pushed": "2026-11-25T15:36:26Z",
    "license": "MIT",
    "lang": {
     "HTML": 6692,
     "JavaScript": 3709
    },
-   "commits": 6,
+   "commits": 7,
    "last": [
+    {
+     "d": "2026-11-25T15:36:25Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/password-generator/commit/5eba84982375e0c93b56401e3495b6ce39dec61b"
+    },
     {
      "d": "2026-11-25T13:08:41Z",
      "m": "Separa build y despliegue de Pages",
@@ -354,29 +359,29 @@
      "d": "2026-11-25T12:36:43Z",
      "m": "Quita enlaces a la web no publicada",
      "u": "https://github.com/virtuanista/password-generator/commit/97e46f998afe3703be7bd1fa07dcfd6d70d925e3"
-    },
-    {
-     "d": "2026-11-25T12:13:15Z",
-     "m": "Unifica el footer del README",
-     "u": "https://github.com/virtuanista/password-generator/commit/b71a75d997dbe5800594e7b33615035ed1f90925"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "Publicar en GitHub Pages",
-    "u": "https://github.com/virtuanista/password-generator/actions/runs/45620608011"
+    "u": "https://github.com/virtuanista/password-generator/actions/runs/45647077630"
    }
   },
   "virtuanista/feelings-classifier": {
    "created": "2026-11-16T13:31:26Z",
-   "pushed": "2026-11-25T12:12:55Z",
+   "pushed": "2026-11-25T15:38:26Z",
    "license": "MIT",
    "lang": {
     "Python": 393
    },
-   "commits": 2,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:38:24Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/feelings-classifier/commit/56f96204cc3006b1a2c930a7805a9811e6cd4e7f"
+    },
     {
      "d": "2026-11-25T12:12:52Z",
      "m": "Unifica el footer del README",
@@ -393,15 +398,20 @@
   },
   "virtuanista/isleta": {
    "created": "2026-11-16T13:39:19Z",
-   "pushed": "2026-11-25T12:13:02Z",
+   "pushed": "2026-11-25T15:38:17Z",
    "license": "MIT",
    "lang": {
     "JavaScript": 208842,
     "CSS": 44553,
     "HTML": 4768
    },
-   "commits": 12,
+   "commits": 13,
    "last": [
+    {
+     "d": "2026-11-25T15:38:15Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/isleta/commit/4f087f9be07843c7131efef4de7904d53eb7af8a"
+    },
     {
      "d": "2026-11-25T12:12:58Z",
      "m": "Unifica el footer del README",
@@ -416,31 +426,31 @@
      "d": "2026-11-23T18:35:54Z",
      "m": "Móvil vertical: la pista inferior pasa a dos líneas en vez de cortarse",
      "u": "https://github.com/virtuanista/isleta/commit/7f1c1b36ffa1d1a76ab73d81582c068120af9631"
-    },
-    {
-     "d": "2026-11-23T18:33:17Z",
-     "m": "Corregir excepción de audio en combos rápidos",
-     "u": "https://github.com/virtuanista/isleta/commit/368cb43ce83d0a9734a4a075ed849f41e1e4d139"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "Publicar en GitHub Pages",
-    "u": "https://github.com/virtuanista/isleta/actions/runs/45611640633"
+    "u": "https://github.com/virtuanista/isleta/actions/runs/45647420936"
    }
   },
   "virtuanista/neon-arena": {
    "created": "2026-11-16T15:20:11Z",
-   "pushed": "2026-11-25T12:13:13Z",
+   "pushed": "2026-11-25T15:38:20Z",
    "license": "MIT",
    "lang": {
     "JavaScript": 41909,
     "CSS": 4455,
     "HTML": 1547
    },
-   "commits": 2,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:38:18Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/neon-arena/commit/3aa27baa779238ebafa714a8f2fb33e07ae75591"
+    },
     {
      "d": "2026-11-25T12:13:09Z",
      "m": "Unifica el footer del README",
@@ -457,7 +467,7 @@
   },
   "virtuanista/agent-test": {
    "created": "2026-11-16T15:20:18Z",
-   "pushed": "2026-11-25T12:12:47Z",
+   "pushed": "2026-11-25T15:36:09Z",
    "license": "MIT",
    "lang": {
     "Python": 136119,
@@ -465,8 +475,13 @@
     "JavaScript": 7609,
     "Batchfile": 264
    },
-   "commits": 2,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:36:07Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/agent-test/commit/27aa2de5d4d6dd67e15465a0fd53694749a634f9"
+    },
     {
      "d": "2026-11-25T12:12:43Z",
      "m": "Unifica el footer del README",
@@ -483,14 +498,24 @@
   },
   "virtuanista/knowledge-atlas": {
    "created": "2026-11-22T04:16:42Z",
-   "pushed": "2026-11-25T13:32:13Z",
+   "pushed": "2026-11-25T15:57:02Z",
    "license": "NOASSERTION",
    "lang": {
     "Python": 44255,
     "Shell": 1812
    },
-   "commits": 13,
+   "commits": 15,
    "last": [
+    {
+     "d": "2026-11-25T15:57:00Z",
+     "m": "Corrige el README para que coincida con el código",
+     "u": "https://github.com/virtuanista/knowledge-atlas/commit/3c34c9db004c439de6f49210030f1b301bb9fff3"
+    },
+    {
+     "d": "2026-11-25T15:36:19Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/knowledge-atlas/commit/b228e3ded021116b04d666f6ca636db9b9fbd6e5"
+    },
     {
      "d": "2026-11-25T13:32:08Z",
      "m": "Une OSINT Atlas como grafo por defecto",
@@ -500,28 +525,18 @@
      "d": "2026-11-25T13:31:30Z",
      "m": "Add 'osint/' from commit 'e571df5bca5b21216116fbb4652cb759bff61884'",
      "u": "https://github.com/virtuanista/knowledge-atlas/commit/1f112da7687178d1591fbcc453b21373a1ab675c"
-    },
-    {
-     "d": "2026-11-25T12:13:13Z",
-     "m": "Unifica el footer del README",
-     "u": "https://github.com/virtuanista/knowledge-atlas/commit/e571df5bca5b21216116fbb4652cb759bff61884"
-    },
-    {
-     "d": "2026-11-25T12:13:01Z",
-     "m": "Unifica el footer del README",
-     "u": "https://github.com/virtuanista/knowledge-atlas/commit/16689fd601eae278f7ce6310a978aabfca35c0c2"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "pages build and deployment",
-    "u": "https://github.com/virtuanista/knowledge-atlas/actions/runs/45624592345"
+    "u": "https://github.com/virtuanista/knowledge-atlas/actions/runs/45647057891"
    }
   },
   "virtuanista/data-miner": {
    "created": "2026-11-22T04:27:57Z",
-   "pushed": "2026-11-25T13:04:54Z",
+   "pushed": "2026-11-25T15:36:03Z",
    "license": "MIT",
    "lang": {
     "Python": 220801,
@@ -531,8 +546,18 @@
     "Batchfile": 385,
     "Shell": 217
    },
-   "commits": 4,
+   "commits": 6,
    "last": [
+    {
+     "d": "2026-11-25T15:36:01Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/data-miner/commit/8dd2e51f2a575cda280f0182e24542757aa41c76"
+    },
+    {
+     "d": "2026-11-25T14:46:22Z",
+     "m": "Añade una captura al README",
+     "u": "https://github.com/virtuanista/data-miner/commit/e47cbd42ae2c8b53f66359afd0a6908d8ea9f076"
+    },
     {
      "d": "2026-11-25T13:04:50Z",
      "m": "Añade la licencia MIT",
@@ -542,36 +567,31 @@
      "d": "2026-11-25T12:12:49Z",
      "m": "Unifica el footer del README",
      "u": "https://github.com/virtuanista/data-miner/commit/d036300c7561881f87adff045b3d122faaae24b4"
-    },
-    {
-     "d": "2026-11-22T13:13:53Z",
-     "m": "Enlaces al repo renombrado e ignorar copia de la app en la raíz",
-     "u": "https://github.com/virtuanista/data-miner/commit/4e117d1749b3464936a0ca3037f608f965037f18"
-    },
-    {
-     "d": "2026-11-22T04:20:02Z",
-     "m": "DataMiner 2.0.0: primera versión publicable",
-     "u": "https://github.com/virtuanista/data-miner/commit/ad917ada70a0e4a3c436b81b176d0ddd63430823"
     }
    ],
    "release": "v2.0.0",
    "ci": {
     "ok": true,
     "name": "pages build and deployment",
-    "u": "https://github.com/virtuanista/data-miner/actions/runs/45619964957"
+    "u": "https://github.com/virtuanista/data-miner/actions/runs/45647001989"
    }
   },
   "virtuanista/parkour-template": {
    "created": "2026-11-25T11:49:16Z",
-   "pushed": "2026-11-25T11:51:33Z",
+   "pushed": "2026-11-25T15:38:23Z",
    "license": "MIT",
    "lang": {
     "TypeScript": 59256,
     "CSS": 2382,
     "HTML": 1841
    },
-   "commits": 2,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:38:21Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/parkour-template/commit/0a506aa1afca6ddaa9780520dcd360a734541a95"
+    },
     {
      "d": "2026-11-25T11:51:29Z",
      "m": "Separa build y despliegue de Pages",
@@ -587,20 +607,30 @@
    "ci": {
     "ok": true,
     "name": "Pages",
-    "u": "https://github.com/virtuanista/parkour-template/actions/runs/45608305527"
+    "u": "https://github.com/virtuanista/parkour-template/actions/runs/45647439765"
    }
   },
   "virtuanista/qr-code": {
    "created": "2026-11-25T13:04:15Z",
-   "pushed": "2026-11-25T13:04:21Z",
+   "pushed": "2026-11-25T15:38:28Z",
    "license": "MIT",
    "lang": {
+    "HTML": 4086,
     "JavaScript": 2747,
-    "HTML": 1982,
     "CSS": 1252
    },
-   "commits": 1,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:38:27Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/qr-code/commit/8446385542413d1a7003a912f261400a4efabf65"
+    },
+    {
+     "d": "2026-11-25T14:46:18Z",
+     "m": "Añade una captura al README",
+     "u": "https://github.com/virtuanista/qr-code/commit/fdad89dcb80576adc410ef639f62958b4dacca42"
+    },
     {
      "d": "2026-11-25T13:04:12Z",
      "m": "Primera versión pública",
@@ -611,19 +641,29 @@
    "ci": {
     "ok": true,
     "name": "pages build and deployment",
-    "u": "https://github.com/virtuanista/qr-code/actions/runs/45619878618"
+    "u": "https://github.com/virtuanista/qr-code/actions/runs/45647452621"
    }
   },
   "virtuanista/unir-pdf": {
    "created": "2026-11-25T13:04:23Z",
-   "pushed": "2026-11-25T13:04:29Z",
+   "pushed": "2026-11-25T15:38:31Z",
    "license": "MIT",
    "lang": {
-    "HTML": 7821,
-    "Python": 1659
+    "HTML": 9772,
+    "Python": 1674
    },
-   "commits": 1,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:38:30Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/unir-pdf/commit/5bc805304258b0dddc91adff98575f0e19431d89"
+    },
+    {
+     "d": "2026-11-25T14:46:16Z",
+     "m": "Añade una captura al README",
+     "u": "https://github.com/virtuanista/unir-pdf/commit/7128029bc97d9d812f815d80130e1a7406b1263b"
+    },
     {
      "d": "2026-11-25T13:04:20Z",
      "m": "Primera versión pública",
@@ -635,7 +675,7 @@
   },
   "virtuanista/gamehub": {
    "created": "2026-11-25T13:25:58Z",
-   "pushed": "2026-11-25T13:26:04Z",
+   "pushed": "2026-11-25T15:36:06Z",
    "license": "MIT",
    "lang": {
     "JavaScript": 111293,
@@ -643,8 +683,18 @@
     "HTML": 2509,
     "Batchfile": 233
    },
-   "commits": 1,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:36:04Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/gamehub/commit/6f05d72fd1917d1c1f8bac18cb462aad022a1d11"
+    },
+    {
+     "d": "2026-11-25T14:46:13Z",
+     "m": "Añade una captura al README",
+     "u": "https://github.com/virtuanista/gamehub/commit/2cf3636de3d58eabcf5aaea344f45c6fd57ec006"
+    },
     {
      "d": "2026-11-25T13:25:55Z",
      "m": "Primera versión pública",
@@ -656,13 +706,23 @@
   },
   "virtuanista/vision": {
    "created": "2026-11-25T13:26:05Z",
-   "pushed": "2026-11-25T13:26:11Z",
+   "pushed": "2026-11-25T15:38:34Z",
    "license": "MIT",
    "lang": {
     "HTML": 26312
    },
-   "commits": 1,
+   "commits": 3,
    "last": [
+    {
+     "d": "2026-11-25T15:38:33Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/virtuanista/vision/commit/2406920d8ea6a2ae90595089610a28c95f71b8f7"
+    },
+    {
+     "d": "2026-11-25T14:46:10Z",
+     "m": "Añade una captura al README",
+     "u": "https://github.com/virtuanista/vision/commit/9a527420bd6e4ef9400a7dc9e3b68c5c83d94b39"
+    },
     {
      "d": "2026-11-25T13:26:02Z",
      "m": "Primera versión pública",
@@ -673,12 +733,12 @@
    "ci": {
     "ok": true,
     "name": "pages build and deployment",
-    "u": "https://github.com/virtuanista/vision/actions/runs/45623563687"
+    "u": "https://github.com/virtuanista/vision/actions/runs/45647470608"
    }
   },
   "vxtop/prisma": {
    "created": "2026-11-25T13:53:10Z",
-   "pushed": "2026-11-25T13:53:18Z",
+   "pushed": "2026-11-25T15:35:14Z",
    "license": "Apache-2.0",
    "lang": {
     "JavaScript": 282282,
@@ -686,8 +746,13 @@
     "PowerShell": 16613,
     "VBScript": 2786
    },
-   "commits": 17,
+   "commits": 18,
    "last": [
+    {
+     "d": "2026-11-25T15:35:12Z",
+     "m": "Español por defecto e inglés como segundo idioma",
+     "u": "https://github.com/vxtop/prisma/commit/a08188a86f93721b119e2a40ca09be74055e36cc"
+    },
     {
      "d": "2026-11-25T13:53:06Z",
      "m": "Graphene look, visual bench, website and own repository",
@@ -702,18 +767,13 @@
      "d": "2026-11-18T15:38:18Z",
      "m": "docs: restore the N key in the guides",
      "u": "https://github.com/vxtop/prisma/commit/f95fa696baed2c61d0f3afc219ec5539dbaeb860"
-    },
-    {
-     "d": "2026-11-18T15:38:10Z",
-     "m": "docs: deleted-file traces, today's news (N) and cube tasks view",
-     "u": "https://github.com/vxtop/prisma/commit/a87924c5d03cbfed2534ae1b25d1c8abce19a693"
     }
    ],
    "release": null,
    "ci": {
     "ok": true,
     "name": "Pages",
-    "u": "https://github.com/vxtop/prisma/actions/runs/45628182753"
+    "u": "https://github.com/vxtop/prisma/actions/runs/45646847563"
    }
   }
  }
