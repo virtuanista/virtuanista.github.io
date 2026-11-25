@@ -49,8 +49,8 @@ export const projects = {
     tech: ['Processed in memory, up to 500 MB in total', 'Only listens on 127.0.0.1', 'Drag to change the order'], pend: [] },
   gamehub: { sum: 'Local workspace to produce a complete video game.', why: 'Design, art, sound, tests and licences in a normal folder, with standard formats.',
     tech: ['No npm dependencies', 'Checks every asset when it comes in', 'Exports with credits, licences and hashes', '10 automated tests', 'Rejects requests from other origins'], pend: [] },
-  vision: { sum: '60,000 particles that rebuild an image.', why: 'An experiment on how much you understand of an image while it is still forming.',
-    tech: ['Plain WebGL, no libraries', 'A single HTML file', 'Accepts your own images'], pend: [] },
+  vision: { sum: 'An interface made only of Gaussian points.', why: 'Emojis, text and images you can touch and connect, still sharp when you get close. The demo is free; Vision Pro is paid.',
+    tech: ['GPU simulation with transform feedback', 'Points spread over what you see as you get closer', '3D deck: each emoji opens a place', 'Demo in a single HTML file'], pend: [] },
   prisma: { sum: 'Talk and work with Claude in a 3D space.', why: 'It grew out of vxtop, but it is another project: vxtop watches, Prisma talks and, if you let it, edits.',
     tech: ['Observe mode: Claude only looks', 'Work mode: edits in a single folder and runs no programs', 'Every edit can ask for permission with its diff', 'Cubes inside cubes, with one colour per kind of content', '17 server tests and 34 in the browser'], pend: ['macOS is untested'] },
 };

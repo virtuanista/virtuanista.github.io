@@ -112,6 +112,10 @@ ${en ? 'Explore my projects, technologies, developments, latest progress and nex
 
 ${en ? 'Newest to oldest.' : 'Del más nuevo al más antiguo.'}
 
+<a href="https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}"><img src="${I}perfil/vision-pro.webp" alt="Vision Pro" width="100%"></a>
+
+**[💎 Vision Pro](https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''})**: ${en ? 'an interface made only of Gaussian points' : 'una interfaz hecha solo de puntos gaussianos'}. [${en ? 'Try it free' : 'Pruébala gratis'}](https://virtuanista.github.io/vision/)
+
 ${grid(PLAY)}
 
 ## 🧊 ${en ? 'Tools, AI and 3D' : 'Herramientas, IA y 3D'}
