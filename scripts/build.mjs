@@ -105,7 +105,7 @@ const md = `<div align="center">
 
 <a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/vision-fija.webp"><img src="img/vision.webp" alt="VISION" width="100%"></picture></a>
 
-<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><img alt="${en ? 'Try it free' : 'Probar gratis'}" src="https://img.shields.io/badge/VISION-${en ? 'Try_it_free' : 'Probar_gratis'}-3fa9ff?style=for-the-badge"></a> <a href="https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}#precios"><img alt="${en ? 'Buy' : 'Comprar'}" src="https://img.shields.io/badge/VISION-${en ? 'Buy' : 'Comprar'}-8b3fd9?style=for-the-badge"></a>
+<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><img alt="${en ? 'Try it free' : 'Probar gratis'}" src="https://img.shields.io/badge/VISION-${en ? 'Try_it_free' : 'Probar_gratis'}-3fa9ff?style=for-the-badge"></a> <a href="https://virtuanista.itch.io/vision/purchase"><img alt="${en ? 'Buy' : 'Comprar'}" src="https://img.shields.io/badge/VISION-${en ? 'Buy' : 'Comprar'}-8b3fd9?style=for-the-badge"></a>
 
 ### ${t('Desarrollo · Tecnología · Inteligencia Artificial')}
 
