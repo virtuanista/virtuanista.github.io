@@ -80,8 +80,8 @@ fs.writeFileSync(P('dist/img/perfil/cifras-oscuro.svg'), svg('#f0f6fc', '#9198a1
 const I = 'https://virtuanista.github.io/img/', HUB = 'https://virtuanista.github.io/#';
 const PLAY = ['parkour', 'vision', 'ceniza', 'retro', 'myrmex', 'isleta'], TOOLS = ['dataminer', 'atlas', 'prisma', 'gamehub', 'vxtop', 'soniditos'];
 const links = p => [p.web && `<a href="${p.web}"><b>▶ ${p.type === 'juego' ? 'Jugar' : p.stage === 'web' ? 'Abrir' : 'Web'}</b></a>`, G(p).release && `<a href="https://github.com/${p.repo}/releases/latest">Descargar</a>`, `<a href="https://github.com/${p.repo}">Código</a>`, `<a href="${HUB}${p.id}">Ficha</a>`].filter(Boolean).join(' · ');
-const cell = p => `<td width="33%" valign="top">\n<a href="${p.web ?? HUB + p.id}"><img src="${I}t/${p.id}.webp" alt="${e(p.name)}" width="100%"></a>\n<p><b>${e(p.name)}</b><br>${e(p.sum)}</p>\n<p><sub>${links(p)}</sub></p>\n</td>`;
-const grid = ids => { const f = list.filter(p => ids.includes(p.id)), o = []; for (let i = 0; i < f.length; i += 3) o.push('<tr>\n' + f.slice(i, i + 3).map(cell).join('\n') + '\n</tr>'); return '<table>\n' + o.join('\n') + '\n</table>'; };
+const cell = p => `<td width="50%" valign="top">\n<a href="${p.web ?? HUB + p.id}"><img src="${I}t/${p.id}.webp" alt="${e(p.name)}" width="100%"></a>\n<p><b>${e(p.name)}</b><br>${e(p.sum)}</p>\n<p><sub>${links(p)}</sub></p>\n</td>`;
+const grid = ids => { const f = list.filter(p => ids.includes(p.id)), o = []; for (let i = 0; i < f.length; i += 2) o.push('<tr>\n' + f.slice(i, i + 2).map(cell).join('\n') + '\n</tr>'); return '<table>\n' + o.join('\n') + '\n</table>'; };
 const rest = list.filter(p => ![...PLAY, ...TOOLS].includes(p.id));
 const B = (n, c, l, k = 'white') => `<img alt="${n}" src="https://img.shields.io/badge/${n.replace(/ /g, '_')}-${c}?style=flat-square${l ? `&logo=${l}&logoColor=${k}` : ''}">`;
 const md = `<div align="center">
@@ -110,7 +110,7 @@ ${grid(TOOLS)}
 
 | Desde | Proyecto | Qué hace | |
 |---|---|---|---|
-${rest.map(p => `| ${p.since.slice(0, 7)} | [**${p.name}**](https://github.com/${p.repo}) | ${p.sum} | ${p.web ? `[Abrir](${p.web})` : `[Ficha](${HUB}${p.id})`} |`).join('\n')}
+${rest.map(p => `| ${p.since.slice(0, 7).replace('-', '&#8209;')} | [**${p.name}**](https://github.com/${p.repo}) | ${p.sum} | ${p.web ? `[Abrir](${p.web})` : `[Ficha](${HUB}${p.id})`} |`).join('\n')}
 
 ## 📊 En cifras
 
