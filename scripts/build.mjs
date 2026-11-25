@@ -23,7 +23,9 @@ for (const p of projects) if (!EN.projects[p.id]) throw new Error('Falta la trad
 fs.rmSync(P('dist/'), { recursive: true, force: true }); fs.mkdirSync(P('dist/en/'), { recursive: true }); fs.mkdirSync(P('dist-profile/'), { recursive: true });
 for (const f of ['style.css', 'app.js']) fs.copyFileSync(P('src/' + f), P('dist/' + f));
 fs.cpSync(P('img/'), P('dist/img/'), { recursive: true });
+const CARDS = [];
 for (const L of ['es', 'en']) build(L); // español en la raíz; inglés en /en/ y README.en.md
+fs.writeFileSync(P('dist-profile/tarjetas.json'), JSON.stringify(CARDS));
 function build(L) {
 const en = L === 'en', LOC = en ? 'en-GB' : 'es-ES', A = en ? '../' : '', PC = en ? '%' : ' %';
 const t = k => { if (!en) return k; if (!(k in EN.UI)) throw new Error('Sin traducir: ' + k); return EN.UI[k]; };
@@ -88,23 +90,27 @@ fs.writeFileSync(P(`dist/img/perfil/cifras-oscuro${S}.svg`), svg('#f0f6fc', '#91
 // ---------- README del perfil ----------
 // El encabezado (lema, botones y frase) lo escribió a mano su autor: no cambiarlo. Sin captura del panel ni presentación personal.
 const I = 'https://virtuanista.github.io/img/', HUB = `https://virtuanista.github.io/${en ? 'en/' : ''}#`;
-const PLAY = ['parkour', 'vision', 'ceniza', 'retro', 'myrmex', 'isleta'], TOOLS = ['dataminer', 'atlas', 'prisma', 'gamehub', 'vxtop', 'soniditos'];
-const links = p => [p.web && `<a href="${p.web}"><b>▶ ${p.type === 'juego' ? t('Jugar') : p.stage === 'web' ? t('Abrir') : t('Web')}</b></a>`, G(p).release && `<a href="https://github.com/${p.repo}/releases/latest">${t('Descargar')}</a>`, `<a href="https://github.com/${p.repo}">${t('Código')}</a>`, `<a href="${HUB}${p.id}">${en ? 'Details' : 'Ficha'}</a>`].filter(Boolean).join(' · ');
-const cell = p => `<td width="50%" valign="top">\n<a href="${p.web ?? HUB + p.id}"><img src="${I}t/${p.id}.webp" alt="${e(p.name)}" width="100%"></a>\n<p><b>${e(p.name)}</b><br>${e(p.sum)}</p>\n<p><sub>${links(p)}</sub></p>\n</td>`;
-const grid = ids => { const f = list.filter(p => ids.includes(p.id)), o = []; for (let i = 0; i < f.length; i += 2) o.push('<tr>\n' + f.slice(i, i + 2).map(cell).join('\n') + '\n</tr>'); return '<table>\n' + o.join('\n') + '\n</table>'; };
-const rest = list.filter(p => ![...PLAY, ...TOOLS].includes(p.id));
+const PLAY = ['parkour', 'ceniza', 'retro', 'myrmex', 'isleta'], TOOLS = ['dataminer', 'atlas', 'prisma', 'gamehub', 'vxtop', 'soniditos'];
+const SUF = en ? '-en' : '';
+const go = p => p.type === 'juego' ? t('Jugar') : p.stage === 'web' ? t('Abrir') : p.stage === 'release' && !p.web ? t('Descargar') : p.web ? t('Web') : t('Código');
+const to = p => p.web ?? (G(p).release ? `https://github.com/${p.repo}/releases/latest` : `https://github.com/${p.repo}`);
+// 400 px: dos por fila en el ordenador y una en el móvil
+const cell = p => `<a href="${to(p)}"><picture><source media="(prefers-color-scheme: dark)" srcset="img/${p.id}-oscuro${SUF}.webp"><img src="img/${p.id}-claro${SUF}.webp" width="400" alt="${e(p.name)}: ${e(p.sum)} ${go(p)}"></picture></a>`;
+const grid = ids => '<p align="center">\n' + list.filter(p => ids.includes(p.id)).map(cell).join('\n') + '\n</p>';
+CARDS.push({ id: 'vision-pro', suf: SUF, name: 'Vision', sum: en ? 'An interface made only of Gaussian points.' : 'Una interfaz hecha solo de puntos gaussianos.', go: en ? 'Try it free' : 'Pruébala gratis' });
+for (const p of list) if ([...PLAY, ...TOOLS].includes(p.id)) CARDS.push({ id: p.id, suf: SUF, name: p.name, sum: p.sum, go: go(p) });
 const B = (n, c, l, k = 'white') => `<img alt="${n}" src="https://img.shields.io/badge/${n.replace(/ /g, '_')}-${c}?style=flat-square${l ? `&logo=${l}&logoColor=${k}` : ''}">`;
 const md = `<div align="center">
 
 <p>${en ? '<a href="README.md">Español</a> · <b>English</b>' : '<b>Español</b> · <a href="README.en.md">English</a>'}</p>
 
-<a href="https://virtuanista.github.io/${en ? 'en/' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="${I}perfil/virtuanista-fija.webp"><img src="${I}perfil/virtuanista.webp" alt="virtuanista" width="100%"></picture></a>
+<a href="https://virtuanista.github.io/${en ? 'en/' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/virtuanista-fija.webp"><img src="img/virtuanista.webp" alt="virtuanista" width="100%"></picture></a>
 
 ### ${t('Desarrollo · Tecnología · Inteligencia Artificial')}
 
 ${en ? '[![Explore the projects](https://img.shields.io/badge/🚀_EXPLORE_THE_PROJECTS-virtuanista.github.io-b84a06?style=for-the-badge)](https://virtuanista.github.io/en/)' : '[![Explorar panel de proyectos](https://img.shields.io/badge/🚀_EXPLORAR_PANEL_DE_PROYECTOS-virtuanista.github.io-b84a06?style=for-the-badge)](https://virtuanista.github.io/)'}
-
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Pepe_Alvar-0a66c2?style=for-the-badge)](https://www.linkedin.com/in/pepe-alvar/)
+[![itch.io](https://img.shields.io/badge/itch.io-virtuanista-fa5c5c?style=for-the-badge)](https://virtuanista.itch.io)
 
 ${en ? 'Explore my projects, technologies, developments, latest progress and next tasks.' : 'Explora mis proyectos, tecnologías, desarrollos, últimos avances y próximas tareas.'}
 
@@ -112,9 +118,9 @@ ${en ? 'Explore my projects, technologies, developments, latest progress and nex
 
 ${en ? 'Newest to oldest.' : 'Del más nuevo al más antiguo.'}
 
-<a href="https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}"><img src="${I}perfil/vision-pro.webp" alt="Vision Pro" width="100%"></a>
+<p align="center"><a href="https://virtuanista.github.io/vision/"><img src="img/vision-pro${SUF}.webp" width="820" alt="Vision: ${en ? 'an interface made only of Gaussian points. Try it free' : 'una interfaz hecha solo de puntos gaussianos. Pruébala gratis'}"></a></p>
 
-**[💎 Vision Pro](https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''})**: ${en ? 'an interface made only of Gaussian points' : 'una interfaz hecha solo de puntos gaussianos'}. [${en ? 'Try it free' : 'Pruébala gratis'}](https://virtuanista.github.io/vision/)
+[![Vision](https://img.shields.io/badge/${en ? 'Free_demo' : 'Demo_gratis'}-Vision-3fa9ff?style=for-the-badge)](https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}) [![Vision Pro](https://img.shields.io/badge/${en ? 'Buy' : 'Comprar'}-Vision_Pro-8b3fd9?style=for-the-badge)](https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}#precios)
 
 ${grid(PLAY)}
 
@@ -122,11 +128,15 @@ ${grid(PLAY)}
 
 ${grid(TOOLS)}
 
-## 🧰 ${en ? 'More projects' : 'Más proyectos'}
+<details>
+<summary><b>🧰 ${en ? 'All projects, with code' : 'Todos los proyectos, con su código'}</b></summary>
+<br>
 
 | ${en ? 'Since | Project | What it does' : 'Desde | Proyecto | Qué hace'} | |
-|---|---|---|---|
-${rest.map(p => `| ${p.since.slice(0, 7).replace('-', '&#8209;')} | [**${p.name}**](https://github.com/${p.repo}) | ${p.sum} | ${p.web ? `[${t('Abrir')}](${p.web})` : `[${en ? 'Details' : 'Ficha'}](${HUB}${p.id})`} |`).join('\n')}
+|:--|:--|:--|:--|
+${list.map(p => `| ${p.since.slice(0, 7).replace('-', '&#8209;')} | [**${p.name}**](https://github.com/${p.repo}) | ${p.sum} | [${en ? 'Details' : 'Ficha'}](${HUB}${p.id}) |`).join('\n')}
+
+</details>
 
 ## 📊 ${en ? 'In numbers' : 'En cifras'}
 
