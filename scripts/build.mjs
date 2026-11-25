@@ -23,7 +23,7 @@ const e = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '
 const day = d => new Date(d).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 const bytes = p => Object.values(G(p).lang).reduce((a, b) => a + b, 0), kb = n => n > 1e6 ? (n / 1e6).toFixed(1).replace('.', ',') + ' MB' : Math.max(1, Math.round(n / 1e3)) + ' kB';
 const COL = { JavaScript: '#c9a400', TypeScript: '#3178c6', Python: '#3f7f5f', HTML: '#d8553a', CSS: '#7a5bb5', otros: '#8a8690' };
-const top = (lang, n = 3) => { const t = Object.values(lang).reduce((a, b) => a + b, 0), s = Object.entries(lang).sort((a, b) => b[1] - a[1]); return s.slice(0, n).map(([k, v]) => [k, v / t]); };
+const top = (lang, n = 3) => { const t = Object.values(lang).reduce((a, b) => a + b, 0), s = Object.entries(lang).sort((a, b) => b[1] - a[1]); return s.slice(0, n).map(([k, v]) => [k, v / t]).filter(([, v]) => v >= .005); };
 const bar = p => `<span class="bar" role="img" aria-label="${top(G(p).lang).map(([k, v]) => `${k} ${Math.round(v * 100)} %`).join(', ')}">${top(G(p).lang).map(([k, v]) => `<i style="flex:${v.toFixed(3)};background:${COL[k] ?? COL.otros}"></i>`).join('')}</span>`;
 const ci = p => G(p).ci ? `<a class="ci ${G(p).ci.ok ? 'ok' : 'ko'}" href="${G(p).ci.u}">${G(p).ci.ok ? 'Correcta' : 'Con fallo'}</a>` : '<span class="none">Sin CI</span>';
 const pend = list.flatMap(p => p.pend.map(t => [p, t]));
@@ -32,8 +32,8 @@ const sum = { n: list.length, web: list.filter(p => p.web).length, commits: list
 const month = d => new Date(d).toLocaleDateString('es-ES', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const attrs = (p, q) => `data-type="${p.type}" data-stage="${p.stage}" data-q="${e(q.toLowerCase())}"`;
 const card = p => `<article class="card" ${attrs(p, [p.name, p.sum, ...p.stack, TYPES[p.type]].join(' '))}>
-<a class="open" href="#${p.id}">${p.img ? `<img loading="lazy" src="img/${p.img[0]}.webp" alt="Captura de ${e(p.name)}" width="640" height="400">` : `<span class="cover" aria-hidden="true">${p.stack.slice(0, 3).map(x => `<span>${e(x)}</span>`).join('')}</span>`}<time datetime="${p.since}">${month(p.since)}</time><h3>${e(p.name)}</h3></a>
-<p>${e(p.sum)}</p>${bar(p)}<p class="meta"><span>${TYPES[p.type]}</span><span>${STAGES[p.stage][0]}</span></p></article>`;
+<a class="open" href="#${p.id}"><img loading="lazy" src="img/t/${p.id}.webp" alt="" width="800" height="450"><time datetime="${p.since}">${month(p.since)}</time><h3>${e(p.name)}</h3></a>
+<p>${e(p.sum)}</p>${bar(p)}<p class="meta"><span>${TYPES[p.type]}</span><span>${STAGES[p.stage][0]}</span>${p.web ? `<a class="go" href="${p.web}">${p.type === 'juego' ? 'Jugar' : p.stage === 'web' ? 'Abrir' : 'Web'} ↗</a>` : ''}</p></article>`;
 const row = p => `<tr ${attrs(p, [p.name, p.sum, ...p.stack, TYPES[p.type]].join(' '))}><th scope="row" data-v="${e(p.name.toLowerCase())}"><a href="#${p.id}">${e(p.name)}</a></th><td>${TYPES[p.type]}</td><td>${STAGES[p.stage][0]}</td><td data-v="${p.since}">${day(p.since)}</td><td data-v="${G(p).pushed}">${day(G(p).pushed)}</td><td class="num" data-v="${G(p).commits}">${G(p).commits}</td><td class="num" data-v="${bytes(p)}">${kb(bytes(p))}</td><td>${ci(p)}</td><td>${G(p).license === 'NOASSERTION' ? 'Mixta' : G(p).license ?? 'Sin licencia'}</td></tr>`;
 const sheet = p => `<dialog id="${p.id}" aria-labelledby="t-${p.id}"><div class="sheet"><header><div><h2 id="t-${p.id}">${e(p.name)}</h2><p>${e(p.sum)}</p></div><button class="close" type="button">Cerrar</button></header>
 ${p.img ? `<div class="shots n${Math.min(3, p.img.length)}">${p.img.map((i, k) => `<a href="img/${i}.webp"><img loading="lazy" src="img/${i}.webp" alt="${e(p.name)}, captura ${k + 1}"></a>`).join('')}</div>` : ''}
@@ -43,16 +43,19 @@ ${p.img ? `<div class="shots n${Math.min(3, p.img.length)}">${p.img.map((i, k) =
 const langs = top(lang, 5);
 const html = `<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>virtuanista (Pepe Alvar): panel de proyectos</title>
-<meta name="description" content="Panel técnico de virtuanista (Pepe Alvar): estado, concepto, tecnología y cambios de ${sum.n} proyectos abiertos.">
-<meta property="og:title" content="virtuanista: panel de proyectos"><meta property="og:description" content="Estado, concepto y tecnología de ${sum.n} proyectos abiertos."><meta property="og:image" content="https://virtuanista.github.io/img/panel.png"><meta property="og:url" content="https://virtuanista.github.io/"><meta name="twitter:card" content="summary_large_image">
+<title>virtuanista: proyectos</title>
+<meta name="description" content="Juegos de navegador, herramientas, IA y 3D: ${sum.n} proyectos abiertos con su estado, tecnología y cambios.">
+<meta property="og:title" content="virtuanista: proyectos"><meta property="og:description" content="Estado, concepto y tecnología de ${sum.n} proyectos abiertos."><meta property="og:image" content="https://virtuanista.github.io/img/perfil/portada.png"><meta property="og:url" content="https://virtuanista.github.io/"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/avatar.png"><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head><body>
 <a class="skip" href="#panel">Ir al panel</a>
-<header class="top"><div class="wrap"><img src="img/avatar.png" alt="" width="72" height="72"><div><h1>virtuanista</h1><p>Soy Pepe Alvar. Hago juegos de navegador, herramientas y cosas que se ven en 3D. Este es el estado real de cada proyecto.</p></div><nav aria-label="Enlaces"><a href="https://github.com/virtuanista">GitHub</a><a href="https://www.linkedin.com/in/pepe-alvar/">LinkedIn</a></nav></div></header>
+<header class="top"><div class="wrap"><nav aria-label="Enlaces"><a href="https://github.com/virtuanista">GitHub</a><a href="https://www.linkedin.com/in/pepe-alvar/">LinkedIn</a><a href="https://github.com/vxtop">vxtop</a><a href="https://github.com/soniditos">Soniditos</a></nav>
+<h1><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/perfil/virtuanista-fija.webp"><img src="img/perfil/virtuanista.webp" alt="virtuanista" width="860" height="230"></picture></h1>
+<p>Juegos de navegador, herramientas, IA y 3D.</p><p class="made">El nombre está escrito con las 60.000 partículas de <a href="#vision">Vision</a>.</p></div></header>
 <main class="wrap" id="panel">
 <dl class="sum"><div><dt>Proyectos abiertos</dt><dd>${sum.n}</dd></div><div><dt>Con web propia</dt><dd>${sum.web}</dd></div><div><dt>Commits</dt><dd>${sum.commits.toLocaleString('es-ES')}</dd></div><div><dt>Código</dt><dd>${kb(sum.code)}</dd></div><div><dt>Ejecuciones correctas</dt><dd>${sum.ci.filter(p => G(p).ci.ok).length} de ${sum.ci.length}</dd></div><div class="wide"><dt>Lenguajes</dt><dd><span class="bar">${langs.map(([k, v]) => `<i style="flex:${v.toFixed(3)};background:${COL[k] ?? COL.otros}"></i>`).join('')}</span><span class="leg">${langs.map(([k, v]) => `<span><i style="background:${COL[k] ?? COL.otros}"></i>${e(k)} ${Math.round(v * 100)} %</span>`).join('')}</span></dd></div></dl>
+<div class="chips" role="group" aria-label="Tipo">${[['', 'Todos'], ...Object.entries(TYPES)].map(([k, n]) => `<button type="button" data-kind="${k}" aria-pressed="${!k}">${n} <span>${k ? list.filter(p => p.type === k).length : list.length}</span></button>`).join('')}</div>
 <div class="tools"><div class="seg" role="group" aria-label="Vista">${[['board', 'Tablero'], ['table', 'Tabla'], ['todo', 'Pendientes'], ['log', 'Actividad']].map(([k, n], i) => `<button type="button" data-view="${k}" aria-pressed="${!i}">${n}</button>`).join('')}</div>
-<label>Tipo <select id="type"><option value="">Todos</option>${Object.entries(TYPES).map(([k, n]) => `<option value="${k}">${n}</option>`).join('')}</select></label><label>Estado <select id="stage"><option value="">Todos</option>${Object.entries(STAGES).map(([k, [n]]) => `<option value="${k}">${n}</option>`).join('')}</select></label><label>Orden <select id="order"><option value="new">Nuevos primero</option><option value="old">Antiguos primero</option></select></label><label>Buscar <input id="q" type="search" placeholder="three.js…"></label><span id="count" role="status"></span></div>
+<label>Estado <select id="stage"><option value="">Todos</option>${Object.entries(STAGES).map(([k, [n]]) => `<option value="${k}">${n}</option>`).join('')}</select></label><label>Orden <select id="order"><option value="new">Nuevos primero</option><option value="old">Antiguos primero</option></select></label><label>Buscar <input id="q" type="search" placeholder="three.js…"></label><span id="count" role="status"></span></div>
 <section id="board" class="view board" aria-label="Tablero">${list.map(card).join('\n')}</section>
 <section id="table" class="view" aria-label="Tabla" hidden><div class="scroll"><table><thead><tr>${['Proyecto', 'Tipo', 'Estado', 'Empezado', 'Último cambio', 'Commits', 'Código', 'Última ejecución', 'Licencia'].map((h, i) => `<th scope="col"${i === 3 ? ' aria-sort="descending"' : ''}><button type="button" data-col="${i}">${h}</button></th>`).join('')}</tr></thead><tbody>${list.map(row).join('')}</tbody></table></div></section>
 <section id="todo" class="view" aria-label="Pendientes" hidden><h2>Pendientes y límites conocidos</h2><ul class="todo big">${pend.map(([p, t]) => `<li ${attrs(p, (p.name + ' ' + t))}>${e(t)} <a href="#${p.id}">${e(p.name)}</a></li>`).join('')}</ul></section>
@@ -64,47 +67,58 @@ ${list.map(sheet).join('\n')}
 </body></html>`;
 fs.rmSync(P('dist/'), { recursive: true, force: true }); fs.mkdirSync(P('dist/'));
 fs.writeFileSync(P('dist/index.html'), html); for (const f of ['style.css', 'app.js']) fs.copyFileSync(P('src/' + f), P('dist/' + f)); fs.cpSync(P('img/'), P('dist/img/'), { recursive: true });
+// ---------- Cifras del perfil: SVG propio, en claro y en oscuro ----------
+const svg = (ink, soft) => {
+  const W = 846, nums = [['Proyectos', sum.n], ['Con web propia', sum.web], ['Commits', sum.commits.toLocaleString('es-ES')], ['Código', kb(sum.code)]], tot = langs.reduce((a, [, v]) => a + v, 0);
+  let x = 0;
+  const bars = langs.map(([k, v]) => { const w = v / tot * W, r = `<rect x="${x.toFixed(1)}" y="86" width="${Math.max(2, w - 2).toFixed(1)}" height="10" fill="${COL[k] ?? COL.otros}"/>`; x += w; return r; }).join('');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="140" viewBox="0 0 ${W} 140" role="img" aria-label="${nums.map(([k, v]) => `${k}: ${v}`).join(', ')}. ${langs.map(([k, v]) => `${k} ${Math.round(v * 100)} %`).join(', ')}"><g font-family="Segoe UI,-apple-system,system-ui,sans-serif">${nums.map(([k, v], i) => `<text x="${i * 212}" y="34" font-size="30" font-weight="650" fill="${ink}">${v}</text><text x="${i * 212}" y="58" font-size="14" fill="${soft}">${k}</text>`).join('')}${langs.map(([k, v], i) => `<circle cx="${i * 169 + 5}" cy="122" r="5" fill="${COL[k] ?? COL.otros}"/><text x="${i * 169 + 17}" y="127" font-size="14" fill="${soft}">${k} ${Math.round(v * 100)} %</text>`).join('')}</g><clipPath id="r"><rect y="86" width="${W}" height="10" rx="5"/></clipPath><g clip-path="url(#r)">${bars}</g></svg>`;
+};
+fs.writeFileSync(P('dist/img/perfil/cifras-oscuro.svg'), svg('#f0f6fc', '#9198a1')); fs.writeFileSync(P('dist/img/perfil/cifras-claro.svg'), svg('#1f2328', '#59636e'));
 // ---------- README del perfil ----------
-const sh = p => `![Último cambio](https://img.shields.io/github/last-commit/${p.repo}?label=%C3%BAltimo%20cambio&color=555)` + (G(p).license && G(p).license !== 'NOASSERTION' ? ` ![Licencia](https://img.shields.io/github/license/${p.repo}?label=licencia)` : '');
-const feat = list.filter(p => p.img && ['juego', 'motor'].includes(p.type) && p.web || ['atlas', 'vxtop', 'dataminer', 'prisma'].includes(p.id));
-const cell = p => `<td width="50%" valign="top">\n<a href="${p.web}"><img src="https://virtuanista.github.io/img/${p.img[0]}.webp" alt="${e(p.name)}"></a>\n<h3><a href="https://github.com/${p.repo}">${e(p.name)}</a></h3>\n<p><b>${e(p.sum)}</b></p>\n<p>${e(p.why)}</p>\n<p><code>${p.stack.map(e).join('</code> <code>')}</code></p>\n<a href="${p.web}"><b>▶ Abrir</b></a> · <a href="https://virtuanista.github.io/#${p.id}">Ficha técnica</a>\n</td>`;
-const rows = []; for (let i = 0; i < feat.length; i += 2) rows.push('<tr>\n' + feat.slice(i, i + 2).map(cell).join('\n') + '\n</tr>');
+// Sin captura del panel ni frase de presentación: su autor las quitó a mano.
+const I = 'https://virtuanista.github.io/img/', HUB = 'https://virtuanista.github.io/#';
+const PLAY = ['parkour', 'vision', 'ceniza', 'retro', 'myrmex', 'isleta'], TOOLS = ['dataminer', 'atlas', 'prisma', 'gamehub', 'vxtop', 'soniditos'];
+const links = p => [p.web && `<a href="${p.web}"><b>▶ ${p.type === 'juego' ? 'Jugar' : p.stage === 'web' ? 'Abrir' : 'Web'}</b></a>`, G(p).release && `<a href="https://github.com/${p.repo}/releases/latest">Descargar</a>`, `<a href="https://github.com/${p.repo}">Código</a>`, `<a href="${HUB}${p.id}">Ficha</a>`].filter(Boolean).join(' · ');
+const cell = p => `<td width="33%" valign="top">\n<a href="${p.web ?? HUB + p.id}"><img src="${I}t/${p.id}.webp" alt="${e(p.name)}" width="100%"></a>\n<p><b>${e(p.name)}</b><br>${e(p.sum)}</p>\n<p><sub>${links(p)}</sub></p>\n</td>`;
+const grid = ids => { const f = list.filter(p => ids.includes(p.id)), o = []; for (let i = 0; i < f.length; i += 3) o.push('<tr>\n' + f.slice(i, i + 3).map(cell).join('\n') + '\n</tr>'); return '<table>\n' + o.join('\n') + '\n</table>'; };
+const rest = list.filter(p => ![...PLAY, ...TOOLS].includes(p.id));
+const B = (n, c, l, k = 'white') => `<img alt="${n}" src="https://img.shields.io/badge/${n.replace(/ /g, '_')}-${c}?style=flat-square${l ? `&logo=${l}&logoColor=${k}` : ''}">`;
 const md = `<div align="center">
 
-# virtuanista 🎣
+<a href="https://virtuanista.github.io/"><picture><source media="(prefers-reduced-motion: reduce)" srcset="${I}perfil/virtuanista-fija.webp"><img src="${I}perfil/virtuanista.webp" alt="virtuanista" width="100%"></picture></a>
 
-**Soy Pepe Alvar. Hago juegos de navegador, herramientas y cosas que se ven en 3D.**
-
-[![Ver el panel de proyectos](https://img.shields.io/badge/Ver_el_panel_de_proyectos-virtuanista.github.io-b84a06?style=for-the-badge)](https://virtuanista.github.io/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pepe_Alvar-0a66c2?style=for-the-badge)](https://www.linkedin.com/in/pepe-alvar/)
-
-[![Panel de proyectos](https://virtuanista.github.io/img/panel.png)](https://virtuanista.github.io/)
+<a href="https://virtuanista.github.io/"><img alt="Todos los proyectos" src="https://img.shields.io/badge/Todos_los_proyectos-8b3fd9?style=for-the-badge"></a>
+<a href="https://www.linkedin.com/in/pepe-alvar/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge"></a>
+<a href="https://vxtop.github.io/"><img alt="vxtop" src="https://img.shields.io/badge/vxtop-0f766e?style=for-the-badge"></a>
+<a href="https://soniditos.com/"><img alt="Soniditos" src="https://img.shields.io/badge/Soniditos-d13f00?style=for-the-badge"></a>
 
 </div>
 
-El [panel](https://virtuanista.github.io/) muestra el estado de cada proyecto: concepto, tecnología, lenguajes, últimos cambios y tareas pendientes.
+## 🎮 Para abrir y jugar
 
-## 🎮 Destacados
+${grid(PLAY)}
 
-Del más nuevo al más antiguo.
+## 🧊 Herramientas, IA y 3D
 
-<table>
-${rows.join('\n')}
-</table>
+${grid(TOOLS)}
 
-## 📋 Todos los proyectos
+## 🧰 Más proyectos
 
-| Empezado | Proyecto | Qué hace | Estado | Seguimiento |
-|---|---|---|---|---|
-${list.map(p => `| ${p.since.slice(0, 7)} | [**${p.name}**](https://github.com/${p.repo}) | ${p.sum} [Ficha](https://virtuanista.github.io/#${p.id}) | ${STAGES[p.stage][0]} | ${sh(p)} |`).join('\n')}
+| Desde | Proyecto | Qué hace | |
+|---|---|---|---|
+${rest.map(p => `| ${p.since.slice(0, 7)} | [**${p.name}**](https://github.com/${p.repo}) | ${p.sum} | ${p.web ? `[Abrir](${p.web})` : `[Ficha](${HUB}${p.id})`} |`).join('\n')}
 
-## 🔧 Pendiente
+## 📊 En cifras
 
-${pend.map(([p, t]) => `- [ ] **[${p.name}](https://virtuanista.github.io/#${p.id})**: ${t}`).join('\n')}
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="${I}perfil/cifras-oscuro.svg">
+<img src="${I}perfil/cifras-claro.svg" alt="Proyectos, webs, commits y reparto de lenguajes" width="100%">
+</picture>
 
-## 🛠️ Con qué trabajo
-
-${[['JavaScript', 'f7df1e', 'javascript', 'black'], ['TypeScript', '3178c6', 'typescript', 'white'], ['Python', '3776ab', 'python', 'white'], ['Node.js', '339933', 'nodedotjs', 'white'], ['three.js', '000000', 'threedotjs', 'white'], ['Vite', '646cff', 'vite', 'white'], ['Electron', '47848f', 'electron', 'white'], ['Web Audio', 'ff6f00', '', 'white'], ['Ollama', '000000', 'ollama', 'white'], ['Hugging Face', 'ffcc4d', 'huggingface', 'black']].map(([n, c, l, k]) => `![${n}](https://img.shields.io/badge/${n.replace(/ /g, '_')}-${c}${l ? `?logo=${l}&logoColor=${k}` : ''})`).join('\n')}
+<p>
+${[B('three.js', '000000', 'threedotjs'), B('WebGL', '990000', 'webgl'), B('Canvas 2D', 'c2410c', 'html5'), B('Web Audio', 'b45309'), B('WebSocket', '444444'), B('WebRTC', '333333', 'webrtc'), B('Node.js', '339933', 'nodedotjs'), B('Vite', '646cff', 'vite'), B('Electron', '47848f', 'electron'), B('Flask', '3b7a8c', 'flask'), B('FastAPI', '009688', 'fastapi'), B('MCP', '111111'), B('Ollama', '000000', 'ollama'), B('Hugging Face', 'ffcc4d', 'huggingface', 'black')].join('\n')}
+</p>
 
 <p align="center">
 	Repositorio generado por <a href="https://github.com/virtuanista" target="_blank">virtu 🎣</a>
@@ -119,5 +133,5 @@ ${[['JavaScript', 'f7df1e', 'javascript', 'black'], ['TypeScript', '3178c6', 'ty
 </p>
 `;
 fs.mkdirSync(P('dist-profile/'), { recursive: true }); fs.writeFileSync(P('dist-profile/README.md'), md);
-for (const p of list) for (const i of p.img ?? []) if (!fs.existsSync(P(`img/${i}.webp`))) throw new Error('Falta img/' + i);
+for (const p of list) for (const i of [`t/${p.id}`, ...p.img ?? []]) if (!fs.existsSync(P(`img/${i}.webp`))) throw new Error('Falta img/' + i);
 console.log(sum.n, 'proyectos,', pend.length, 'pendientes,', sum.commits, 'commits; CI con fallo:', sum.ci.filter(p => !G(p).ci.ok).map(p => p.name).join() || 'ninguna');

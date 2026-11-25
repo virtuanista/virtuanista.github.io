@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T14:02:48.314Z",
+ "at": "2026-11-25T14:40:03.761Z",
  "repos": {
   "virtuanista/llmql": {
    "created": "2025-02-20T22:35:24Z",
@@ -486,8 +486,8 @@
    "pushed": "2026-11-25T13:32:13Z",
    "license": "NOASSERTION",
    "lang": {
-    "Python": 20022,
-    "Shell": 1035
+    "Python": 44255,
+    "Shell": 1812
    },
    "commits": 13,
    "last": [
