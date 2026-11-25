@@ -1,15 +1,22 @@
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const type = $('#type'), q = $('#q');
+const type = $('#type'), stage = $('#stage'), order = $('#order'), q = $('#q');
 let view = 'board';
 function filter() {
   const t = type.value, s = q.value.trim().toLowerCase();
-  for (const el of $$('[data-q]')) el.hidden = (t && el.dataset.type !== t) || !el.dataset.q.includes(s);
+  for (const el of $$('[data-q]')) el.hidden = (t && el.dataset.type !== t) || (stage.value && el.dataset.stage !== stage.value) || !el.dataset.q.includes(s);
   const n = $$(`#${view} [data-q]:not([hidden])`).length;
-  for (const c of $$('.col')) { const k = c.querySelectorAll('.card:not([hidden])').length; c.hidden = !k; c.querySelector('h2 span').textContent = k; }
   $('#count').textContent = `${n} ${view === 'todo' ? 'pendientes' : view === 'log' ? 'cambios' : 'proyectos'}`;
   $('#empty').hidden = n > 0;
 }
-type.onchange = q.oninput = filter;
+type.onchange = stage.onchange = q.oninput = filter;
+// El HTML llega del más nuevo al más antiguo; invertirlo entero mantiene los empates coherentes.
+const lists = ['#board', '#table tbody', '#todo ul', '#log ol'].map(s => [$(s), [...$(s).children]]);
+order.onchange = () => {
+  const old = order.value === 'old';
+  for (const [el, kids] of lists) el.append(...(old ? [...kids].reverse() : kids));
+  for (const x of $$('thead th')) x.removeAttribute('aria-sort');
+  $$('thead th')[3].setAttribute('aria-sort', old ? 'ascending' : 'descending');
+};
 for (const b of $$('[data-view]')) b.onclick = () => {
   view = b.dataset.view;
   for (const x of $$('[data-view]')) x.setAttribute('aria-pressed', x === b);

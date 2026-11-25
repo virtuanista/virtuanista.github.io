@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T13:54:11.939Z",
+ "at": "2026-11-25T14:02:48.314Z",
  "repos": {
   "virtuanista/llmql": {
    "created": "2025-02-20T22:35:24Z",
@@ -211,7 +211,7 @@
    "ci": {
     "ok": true,
     "name": "CI",
-    "u": "https://github.com/vxtop/vxtop/actions/runs/44203515641"
+    "u": "https://github.com/vxtop/vxtop/actions/runs/45628186128"
    }
   },
   "virtuanista/ceniza-protocolo-bastion": {
