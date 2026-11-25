@@ -29,6 +29,7 @@ section { padding-bottom: 64px; }
 .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 36px 24px; }
 article { grid-column: span 2; }
 article.big { grid-column: span 3; }
+article.wide { grid-column: 1 / -1; }
 article img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; background: var(--line); }
 h3 { margin: 14px 0 4px; font-size: 21px; line-height: 1.25; }
 article p { margin: 0 0 8px; color: var(--soft); }
@@ -86,8 +87,7 @@ footer img { display: block; max-width: 100%; margin: 12px auto; }
 <section id="atlas">
   <h2>Atlas</h2>
   <div class="grid">
-    <article class="big"><img loading="lazy" src="img/osint.webp" alt="Grafo de OSINT Atlas"><h3>OSINT Atlas</h3><p>3.500 fuentes OSINT en un grafo fractal.</p><div class="links"><a href="https://virtuanista.github.io/osint-atlas/">Explorar OSINT Atlas</a><a href="https://github.com/virtuanista/osint-atlas">Código</a></div></article>
-    <article class="big"><img loading="lazy" src="img/knowledge.webp" alt="Grafo de Knowledge Atlas"><h3>Knowledge Atlas</h3><p>Cinco grafos: IA, algoritmos, estándares web, datasets y juegos.</p><div class="links"><a href="https://virtuanista.github.io/knowledge-atlas/">Explorar Knowledge Atlas</a><a href="https://github.com/virtuanista/knowledge-atlas">Código</a></div></article>
+    <article class="wide"><img loading="lazy" src="img/osint.webp" alt="Grafo OSINT de Knowledge Atlas"><h3>Knowledge Atlas</h3><p>Seis grafos fractales con 5.958 fuentes: OSINT, IA, algoritmos, estándares web, datasets y juegos.</p><div class="links"><a href="https://virtuanista.github.io/knowledge-atlas/">Explorar Knowledge Atlas</a><a href="https://github.com/virtuanista/knowledge-atlas">Código</a></div></article>
   </div>
 </section>
 </main>
