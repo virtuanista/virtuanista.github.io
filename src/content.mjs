@@ -93,4 +93,8 @@ export const projects = [
     sum: '60.000 partículas que reconstruyen una imagen.',
     why: 'Un experimento sobre cuánto se entiende de una imagen mientras todavía se está formando.',
     tech: ['WebGL directo, sin librerías', 'Un único archivo HTML', 'Admite tus propias imágenes'], pend: [] },
+  { id: 'prisma', repo: 'vxtop/prisma', name: 'Prisma', type: 'ia', stage: 'code', web: 'https://vxtop.github.io/prisma/', stack: ['Node.js', 'three.js', 'Claude Code', 'MCP'], img: ['prisma', 'prisma-2'],
+    sum: 'Habla y trabaja con Claude en un espacio 3D.',
+    why: 'Nace de vxtop, pero es otro proyecto: vxtop observa, Prisma conversa y, si lo permites, edita.',
+    tech: ['Modo observar: Claude solo mira', 'Modo trabajo: edita en una sola carpeta y no ejecuta programas', 'Cada edición puede pedir permiso con su diff', 'Cubos dentro de cubos, con un color por tipo de contenido', '17 pruebas de servidor y 34 en navegador'], pend: ['macOS no está probado'] },
 ];

@@ -64,7 +64,7 @@ fs.rmSync(P('dist/'), { recursive: true, force: true }); fs.mkdirSync(P('dist/')
 fs.writeFileSync(P('dist/index.html'), html); for (const f of ['style.css', 'app.js']) fs.copyFileSync(P('src/' + f), P('dist/' + f)); fs.cpSync(P('img/'), P('dist/img/'), { recursive: true });
 // ---------- README del perfil ----------
 const sh = p => `![Último cambio](https://img.shields.io/github/last-commit/${p.repo}?label=%C3%BAltimo%20cambio&color=555)` + (G(p).license && G(p).license !== 'NOASSERTION' ? ` ![Licencia](https://img.shields.io/github/license/${p.repo}?label=licencia)` : '');
-const feat = list.filter(p => p.img && ['juego', 'motor'].includes(p.type) && p.web || ['atlas', 'vxtop', 'dataminer'].includes(p.id));
+const feat = list.filter(p => p.img && ['juego', 'motor'].includes(p.type) && p.web || ['atlas', 'vxtop', 'dataminer', 'prisma'].includes(p.id));
 const cell = p => `<td width="50%" valign="top">\n<a href="${p.web}"><img src="https://virtuanista.github.io/img/${p.img[0]}.webp" alt="${e(p.name)}"></a>\n<h3><a href="https://github.com/${p.repo}">${e(p.name)}</a></h3>\n<p><b>${e(p.sum)}</b></p>\n<p>${e(p.why)}</p>\n<p><code>${p.stack.map(e).join('</code> <code>')}</code></p>\n<a href="${p.web}"><b>▶ Abrir</b></a> · <a href="https://virtuanista.github.io/#${p.id}">Ficha técnica</a>\n</td>`;
 const rows = []; for (let i = 0; i < feat.length; i += 2) rows.push('<tr>\n' + feat.slice(i, i + 2).map(cell).join('\n') + '\n</tr>');
 const md = `<div align="center">

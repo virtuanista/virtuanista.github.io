@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T13:38:04.542Z",
+ "at": "2026-11-25T13:54:11.939Z",
  "repos": {
   "virtuanista/llmql": {
    "created": "2025-02-20T22:35:24Z",
@@ -176,7 +176,7 @@
   },
   "vxtop/vxtop": {
    "created": "2026-11-15T11:31:36Z",
-   "pushed": "2026-11-18T00:09:53Z",
+   "pushed": "2026-11-25T13:53:24Z",
    "license": "Apache-2.0",
    "lang": {
     "JavaScript": 188653,
@@ -184,8 +184,13 @@
     "PowerShell": 16602,
     "VBScript": 2779
    },
-   "commits": 12,
+   "commits": 13,
    "last": [
+    {
+     "d": "2026-11-25T13:53:20Z",
+     "m": "Enlaza Prisma como proyecto aparte",
+     "u": "https://github.com/vxtop/vxtop/commit/c490c258e3c6b5eb6b8a49aab2c53687b4335d29"
+    },
     {
      "d": "2026-11-17T23:32:25Z",
      "m": "Media gallery of a cube: every image, video and audio file under the folder, with folder tree, filters, sortin",
@@ -200,11 +205,6 @@
      "d": "2026-11-16T14:43:59Z",
      "m": "Documentación en español: registro de cambios, contribución, hoja de ruta, seguridad, arquitectura y plantilla",
      "u": "https://github.com/vxtop/vxtop/commit/38d4476d73abc0b850de43d6343fc0c7392f753b"
-    },
-    {
-     "d": "2026-11-16T13:25:06Z",
-     "m": "README principal en español (inglés en README.en.md)",
-     "u": "https://github.com/vxtop/vxtop/commit/37046de27f73e61a3bcafeedaa45e01b83dad02d"
     }
    ],
    "release": "v0.6.0",
@@ -674,6 +674,46 @@
     "ok": true,
     "name": "pages build and deployment",
     "u": "https://github.com/virtuanista/vision/actions/runs/45623563687"
+   }
+  },
+  "vxtop/prisma": {
+   "created": "2026-11-25T13:53:10Z",
+   "pushed": "2026-11-25T13:53:18Z",
+   "license": "Apache-2.0",
+   "lang": {
+    "JavaScript": 282282,
+    "HTML": 23015,
+    "PowerShell": 16613,
+    "VBScript": 2786
+   },
+   "commits": 17,
+   "last": [
+    {
+     "d": "2026-11-25T13:53:06Z",
+     "m": "Graphene look, visual bench, website and own repository",
+     "u": "https://github.com/vxtop/prisma/commit/e7c4faa51c84d86fbce6e511e9005e4634a80e52"
+    },
+    {
+     "d": "2026-11-18T16:00:18Z",
+     "m": "Inside a case: file cards, sort, search, summary cubes; inside a program",
+     "u": "https://github.com/vxtop/prisma/commit/b9dd9e2256463a85fbaefdb959a38325fa30ef51"
+    },
+    {
+     "d": "2026-11-18T15:38:18Z",
+     "m": "docs: restore the N key in the guides",
+     "u": "https://github.com/vxtop/prisma/commit/f95fa696baed2c61d0f3afc219ec5539dbaeb860"
+    },
+    {
+     "d": "2026-11-18T15:38:10Z",
+     "m": "docs: deleted-file traces, today's news (N) and cube tasks view",
+     "u": "https://github.com/vxtop/prisma/commit/a87924c5d03cbfed2534ae1b25d1c8abce19a693"
+    }
+   ],
+   "release": null,
+   "ci": {
+    "ok": true,
+    "name": "Pages",
+    "u": "https://github.com/vxtop/prisma/actions/runs/45628182753"
    }
   }
  }
