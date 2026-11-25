@@ -2,11 +2,12 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 let kind = '';
 const stage = $('#stage'), order = $('#order'), q = $('#q');
 let view = 'board';
+const en = document.documentElement.lang === 'en', W = en ? { board: 'projects', todo: 'to do', log: 'changes' } : { board: 'proyectos', todo: 'pendientes', log: 'cambios' };
 function filter() {
   const t = kind, s = q.value.trim().toLowerCase();
   for (const el of $$('[data-q]')) el.hidden = (t && el.dataset.type !== t) || (stage.value && el.dataset.stage !== stage.value) || !el.dataset.q.includes(s);
   const n = $$(`#${view} [data-q]:not([hidden])`).length;
-  $('#count').textContent = `${n} ${view === 'todo' ? 'pendientes' : view === 'log' ? 'cambios' : 'proyectos'}`;
+  $('#count').textContent = `${n} ${W[view] ?? W.board}`;
   $('#empty').hidden = n > 0;
 }
 for (const b of $$('[data-kind]')) b.onclick = () => {
@@ -34,7 +35,7 @@ for (const b of $$('[data-col]')) b.onclick = () => {
   for (const x of $$('thead th')) x.removeAttribute('aria-sort');
   th.setAttribute('aria-sort', dir);
   const v = r => r.children[i].dataset.v ?? r.children[i].textContent;
-  body.append(...[...body.rows].sort((a, z) => v(a).localeCompare(v(z), 'es', { numeric: i === 5 || i === 6 }) * (dir === 'ascending' ? 1 : -1)));
+  body.append(...[...body.rows].sort((a, z) => v(a).localeCompare(v(z), en ? 'en' : 'es', { numeric: i === 5 || i === 6 }) * (dir === 'ascending' ? 1 : -1)));
 };
 // Fichas: cada proyecto tiene su enlace (#id) y el botón atrás la cierra.
 function route() {
@@ -46,5 +47,7 @@ for (const d of $$('dialog')) {
   d.addEventListener('close', () => { if (location.hash === '#' + d.id) history.pushState(null, '', location.pathname); });
   d.addEventListener('click', e => { if (e.target === d || e.target.closest('.close')) d.close(); });
 }
+// El cambio de idioma conserva la ficha abierta.
+const sw = $('.lang a'); sw.addEventListener('click', () => { sw.href = sw.getAttribute('href').split('#')[0] + location.hash; });
 addEventListener('hashchange', route); addEventListener('popstate', route);
 filter(); route();
