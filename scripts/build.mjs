@@ -46,7 +46,7 @@ const attrs = (p, q) => `data-type="${p.type}" data-stage="${p.stage}" data-q="$
 const card = p => `<article class="card" ${attrs(p, [p.name, p.sum, ...p.stack, TYPES[p.type]].join(' '))}>
 <a class="open" href="#${p.id}"><img loading="lazy" src="${A}img/t/${p.id}.webp" alt="" width="800" height="450"><time datetime="${p.since}">${month(p.since)}</time><h3>${e(p.name)}</h3></a>
 <p>${e(p.sum)}</p>${bar(p)}<p class="meta"><span>${TYPES[p.type]}</span><span>${STAGES[p.stage][0]}</span>${p.web ? `<a class="go" href="${p.web}">${p.type === 'juego' ? t('Jugar') : p.stage === 'web' ? t('Abrir') : t('Web')} ↗</a>` : ''}</p></article>`;
-const row = p => `<tr ${attrs(p, [p.name, p.sum, ...p.stack, TYPES[p.type]].join(' '))}><th scope="row" data-v="${e(p.name.toLowerCase())}"><a href="#${p.id}">${e(p.name)}</a></th><td>${TYPES[p.type]}</td><td>${STAGES[p.stage][0]}</td><td data-v="${p.since}">${day(p.since)}</td><td data-v="${G(p).pushed}">${day(G(p).pushed)}</td><td class="num" data-v="${G(p).commits}">${G(p).commits}</td><td class="num" data-v="${bytes(p)}">${kb(bytes(p))}</td><td>${ci(p)}</td><td>${G(p).license === 'NOASSERTION' ? t('Mixta') : G(p).license ?? t('Sin licencia')}</td></tr>`;
+const row = p => `<tr ${attrs(p, [p.name, p.sum, ...p.stack, TYPES[p.type]].join(' '))}><th scope="row" data-v="${e(p.name.toLowerCase())}"><a href="#${p.id}">${e(p.name)}</a></th><td>${TYPES[p.type]}</td><td>${STAGES[p.stage][0]}</td><td data-v="${p.since}">${day(p.since)}</td><td data-v="${G(p).pushed}">${day(G(p).pushed)}</td><td class="num" data-v="${G(p).commits}">${G(p).commits}</td><td class="num" data-v="${bytes(p)}">${kb(bytes(p))}</td><td>${ci(p)}</td><td>${G(p).license === 'NOASSERTION' ? t('Mixta') : G(p).license ?? '—'}</td></tr>`;
 const sheet = p => `<dialog id="${p.id}" aria-labelledby="t-${p.id}"><div class="sheet"><header><div><h2 id="t-${p.id}">${e(p.name)}</h2><p>${e(p.sum)}</p></div><button class="close" type="button">${t('Cerrar')}</button></header>
 ${p.img ? `<div class="shots n${Math.min(3, p.img.length)}">${p.img.map((i, k) => `<a href="${A}img/${i}.webp"><img loading="lazy" src="${A}img/${i}.webp" alt="${e(p.name)}, ${t('captura')} ${k + 1}"></a>`).join('')}</div>` : ''}
 <p class="act">${p.web ? `<a class="btn" href="${p.web}">${t('Abrir')} ${e(p.name)}</a>` : ''}<a class="btn alt" href="https://github.com/${p.repo}">${t('Ver código')}</a>${G(p).release ? `<a class="btn alt" href="https://github.com/${p.repo}/releases/latest">${t('Descargar')} ${e(G(p).release)}</a>` : ''}</p>
@@ -97,14 +97,15 @@ const to = p => p.web ?? (G(p).release ? `https://github.com/${p.repo}/releases/
 // 400 px: dos por fila en el ordenador y una en el móvil
 const cell = p => `<a href="${to(p)}"><picture><source media="(prefers-color-scheme: dark)" srcset="img/${p.id}-oscuro${SUF}.webp"><img src="img/${p.id}-claro${SUF}.webp" width="400" alt="${e(p.name)}: ${e(p.sum)} ${go(p)}"></picture></a>`;
 const grid = ids => '<p align="center">\n' + list.filter(p => ids.includes(p.id)).map(cell).join('\n') + '\n</p>';
-CARDS.push({ id: 'vision-pro', suf: SUF, name: 'Vision', sum: en ? 'An interface made only of Gaussian points.' : 'Una interfaz hecha solo de puntos gaussianos.', go: en ? 'Try it free' : 'Pruébala gratis' });
 for (const p of list) if ([...PLAY, ...TOOLS].includes(p.id)) CARDS.push({ id: p.id, suf: SUF, name: p.name, sum: p.sum, go: go(p) });
 const B = (n, c, l, k = 'white') => `<img alt="${n}" src="https://img.shields.io/badge/${n.replace(/ /g, '_')}-${c}?style=flat-square${l ? `&logo=${l}&logoColor=${k}` : ''}">`;
 const md = `<div align="center">
 
 <p>${en ? '<a href="README.md">Español</a> · <b>English</b>' : '<b>Español</b> · <a href="README.en.md">English</a>'}</p>
 
-<a href="https://virtuanista.github.io/${en ? 'en/' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/virtuanista-fija.webp"><img src="img/virtuanista.webp" alt="virtuanista" width="100%"></picture></a>
+<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/vision-fija.webp"><img src="img/vision.webp" alt="VISIÓN" width="100%"></picture></a>
+
+<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><img alt="${en ? 'Try it free' : 'Probar gratis'}" src="https://img.shields.io/badge/VISIÓN-${en ? 'Try_it_free' : 'Probar_gratis'}-3fa9ff?style=for-the-badge"></a> <a href="https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}#precios"><img alt="${en ? 'Buy' : 'Comprar'}" src="https://img.shields.io/badge/VISIÓN-${en ? 'Buy' : 'Comprar'}-8b3fd9?style=for-the-badge"></a>
 
 ### ${t('Desarrollo · Tecnología · Inteligencia Artificial')}
 
@@ -117,10 +118,6 @@ ${en ? 'Explore my projects, technologies, developments, latest progress and nex
 ## 🎮 ${en ? 'Featured' : 'Destacados'}
 
 ${en ? 'Newest to oldest.' : 'Del más nuevo al más antiguo.'}
-
-<p align="center"><a href="https://virtuanista.github.io/vision/"><img src="img/vision-pro${SUF}.webp" width="820" alt="Vision: ${en ? 'an interface made only of Gaussian points. Try it free' : 'una interfaz hecha solo de puntos gaussianos. Pruébala gratis'}"></a></p>
-
-[![Vision](https://img.shields.io/badge/${en ? 'Free_demo' : 'Demo_gratis'}-Vision-3fa9ff?style=for-the-badge)](https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}) [![Vision Pro](https://img.shields.io/badge/${en ? 'Buy' : 'Comprar'}-Vision_Pro-8b3fd9?style=for-the-badge)](https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}#precios)
 
 ${grid(PLAY)}
 
