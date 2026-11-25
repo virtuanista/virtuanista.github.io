@@ -20,12 +20,12 @@ nav { display: flex; gap: 18px; font-weight: 600; }
 .sum .wide dd { font-size: 14px; font-weight: 400; white-space: normal; }
 .bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; gap: 2px; margin: 8px 0; } .bar i { min-width: 3px; }
 .leg { display: flex; flex-wrap: wrap; gap: 4px 14px; } .leg i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; }
-.tools { position: sticky; top: 0; z-index: 3; display: flex; flex-wrap: wrap; gap: 12px 14px; align-items: center; padding: 12px 0; background: var(--bg); border-block: 1px solid var(--line); }
+.tools { position: sticky; top: 0; z-index: 3; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 12px 0; background: var(--bg); border-block: 1px solid var(--line); }
 .seg { display: flex; border: 1px solid var(--ink); border-radius: 7px; overflow: hidden; }
 button, select, input { font: inherit; color: inherit; }
 .seg button { border: 0; background: none; padding: 7px 11px; cursor: pointer; } .seg button:focus-visible { outline-offset: -3px; }
 .seg [aria-pressed=true] { background: var(--ink); color: var(--bg); }
-select, input { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; padding: 6px 10px; } input { width: 120px; } .tools select { max-width: 152px; }
+select, input { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; padding: 6px 10px; } input { width: 110px; } #type, #stage { width: 112px; } #order { width: 172px; }
 #count { margin-left: auto; color: var(--soft); }
 .view { padding: 24px 0 56px; } .view > h2 { font-size: 24px; margin-bottom: 16px; }
 .board { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
