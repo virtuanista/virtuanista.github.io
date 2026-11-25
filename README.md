@@ -2,7 +2,14 @@
 
 Web con los proyectos públicos de [virtuanista](https://github.com/virtuanista) (Pepe Alvar): **[virtuanista.github.io](https://virtuanista.github.io/)**.
 
-Es un único `index.html` sin dependencias ni compilación. Para añadir un proyecto, copia un `<article>` y pon su captura en `img/`.
+![Panel](img/panel.png)
+
+Panel técnico con tablero, tabla, pendientes, actividad y una ficha por proyecto. Sin dependencias.
+
+- **Contenido:** `src/content.mjs` (concepto, tecnología, límites y capturas).
+- **Datos:** `node scripts/build.mjs --sync` lee GitHub (fechas, commits, lenguajes, CI y versiones) y genera `dist/`.
+- **Perfil:** el mismo comando genera `dist-profile/README.md`.
+- **Publicación:** GitHub Actions, en cada push y los lunes, sin crear commits.
 
 ## Licencia
 
