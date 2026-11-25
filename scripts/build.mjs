@@ -50,7 +50,7 @@ const html = `<!doctype html>
 <a class="skip" href="#panel">Ir al panel</a>
 <header class="top"><div class="wrap"><nav aria-label="Enlaces"><a href="https://github.com/virtuanista">GitHub</a><a href="https://www.linkedin.com/in/pepe-alvar/">LinkedIn</a><a href="https://github.com/vxtop">vxtop</a><a href="https://github.com/soniditos">Soniditos</a></nav>
 <h1><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/perfil/virtuanista-fija.webp"><img src="img/perfil/virtuanista.webp" alt="virtuanista" width="860" height="230"></picture></h1>
-<p>Juegos de navegador, herramientas, IA y 3D.</p><p class="made">El nombre está escrito con las 60.000 partículas de <a href="#vision">Vision</a>.</p></div></header>
+<p>Desarrollo · Tecnología · Inteligencia Artificial</p><p class="made">El nombre está escrito con las 60.000 partículas de <a href="#vision">Vision</a>.</p></div></header>
 <main class="wrap" id="panel">
 <dl class="sum"><div><dt>Proyectos abiertos</dt><dd>${sum.n}</dd></div><div><dt>Con web propia</dt><dd>${sum.web}</dd></div><div><dt>Commits</dt><dd>${sum.commits.toLocaleString('es-ES')}</dd></div><div><dt>Código</dt><dd>${kb(sum.code)}</dd></div><div><dt>Ejecuciones correctas</dt><dd>${sum.ci.filter(p => G(p).ci.ok).length} de ${sum.ci.length}</dd></div><div class="wide"><dt>Lenguajes</dt><dd><span class="bar">${langs.map(([k, v]) => `<i style="flex:${v.toFixed(3)};background:${COL[k] ?? COL.otros}"></i>`).join('')}</span><span class="leg">${langs.map(([k, v]) => `<span><i style="background:${COL[k] ?? COL.otros}"></i>${e(k)} ${Math.round(v * 100)} %</span>`).join('')}</span></dd></div></dl>
 <div class="chips" role="group" aria-label="Tipo">${[['', 'Todos'], ...Object.entries(TYPES)].map(([k, n]) => `<button type="button" data-kind="${k}" aria-pressed="${!k}">${n} <span>${k ? list.filter(p => p.type === k).length : list.length}</span></button>`).join('')}</div>
@@ -76,7 +76,7 @@ const svg = (ink, soft) => {
 };
 fs.writeFileSync(P('dist/img/perfil/cifras-oscuro.svg'), svg('#f0f6fc', '#9198a1')); fs.writeFileSync(P('dist/img/perfil/cifras-claro.svg'), svg('#1f2328', '#59636e'));
 // ---------- README del perfil ----------
-// Sin captura del panel ni frase de presentación: su autor las quitó a mano.
+// El encabezado (lema, botones y frase) lo escribió a mano su autor: no cambiarlo. Sin captura del panel ni presentación personal.
 const I = 'https://virtuanista.github.io/img/', HUB = 'https://virtuanista.github.io/#';
 const PLAY = ['parkour', 'vision', 'ceniza', 'retro', 'myrmex', 'isleta'], TOOLS = ['dataminer', 'atlas', 'prisma', 'gamehub', 'vxtop', 'soniditos'];
 const links = p => [p.web && `<a href="${p.web}"><b>▶ ${p.type === 'juego' ? 'Jugar' : p.stage === 'web' ? 'Abrir' : 'Web'}</b></a>`, G(p).release && `<a href="https://github.com/${p.repo}/releases/latest">Descargar</a>`, `<a href="https://github.com/${p.repo}">Código</a>`, `<a href="${HUB}${p.id}">Ficha</a>`].filter(Boolean).join(' · ');
@@ -88,14 +88,17 @@ const md = `<div align="center">
 
 <a href="https://virtuanista.github.io/"><picture><source media="(prefers-reduced-motion: reduce)" srcset="${I}perfil/virtuanista-fija.webp"><img src="${I}perfil/virtuanista.webp" alt="virtuanista" width="100%"></picture></a>
 
-<a href="https://virtuanista.github.io/"><img alt="Todos los proyectos" src="https://img.shields.io/badge/Todos_los_proyectos-8b3fd9?style=for-the-badge"></a>
-<a href="https://www.linkedin.com/in/pepe-alvar/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge"></a>
-<a href="https://vxtop.github.io/"><img alt="vxtop" src="https://img.shields.io/badge/vxtop-0f766e?style=for-the-badge"></a>
-<a href="https://soniditos.com/"><img alt="Soniditos" src="https://img.shields.io/badge/Soniditos-d13f00?style=for-the-badge"></a>
+### Desarrollo · Tecnología · Inteligencia Artificial
 
-</div>
+[![Explorar panel de proyectos](https://img.shields.io/badge/🚀_EXPLORAR_PANEL_DE_PROYECTOS-virtuanista.github.io-b84a06?style=for-the-badge)](https://virtuanista.github.io/)
 
-## 🎮 Para abrir y jugar
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pepe_Alvar-0a66c2?style=for-the-badge)](https://www.linkedin.com/in/pepe-alvar/)
+
+Explora mis proyectos, tecnologías, desarrollos, últimos avances y próximas tareas.
+
+## 🎮 Destacados
+
+Del más nuevo al más antiguo.
 
 ${grid(PLAY)}
 
@@ -131,6 +134,8 @@ ${[B('three.js', '000000', 'threedotjs'), B('WebGL', '990000', 'webgl'), B('Canv
 <p align="center">
 	Copyright &copy; 2026
 </p>
+
+</div>
 `;
 fs.mkdirSync(P('dist-profile/'), { recursive: true }); fs.writeFileSync(P('dist-profile/README.md'), md);
 for (const p of list) for (const i of [`t/${p.id}`, ...p.img ?? []]) if (!fs.existsSync(P(`img/${i}.webp`))) throw new Error('Falta img/' + i);
