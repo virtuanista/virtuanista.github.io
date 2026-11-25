@@ -90,7 +90,7 @@ export const projects = [
     sum: 'Espacio de trabajo local para producir un videojuego completo.',
     why: 'Diseño, arte, sonido, pruebas y licencias en una carpeta normal, con formatos estándar.',
     tech: ['Sin dependencias de npm', 'Comprueba cada recurso al entrar', 'Exporta con créditos, licencias y hashes', '10 pruebas automáticas', 'Rechaza peticiones de otros orígenes'], pend: [] },
-  { id: 'vision', since: '2026-11-20', repo: `${V}/vision`, name: 'VISIÓN', type: 'exp', stage: 'web', web: W + 'vision/', stack: ['WebGL 2', 'JavaScript'], img: ['vision', 'vision-2'],
+  { id: 'vision', since: '2026-11-20', repo: `${V}/vision`, name: 'VISION', type: 'exp', stage: 'web', web: W + 'vision/', stack: ['WebGL 2', 'JavaScript'], img: ['vision', 'vision-2'],
     sum: 'Una interfaz hecha solo de puntos.',
     why: 'Emojis, textos e imágenes que se tocan, se conectan y siguen nítidos al acercarte. Con demos gratis y un estudio de pago.',
     tech: ['Simulación en la GPU con transform feedback', 'Los puntos se reparten entre lo que ves al acercarte', 'Tablero 3D: cada emoji abre un sitio', 'Demo en un único archivo HTML'], pend: [] },

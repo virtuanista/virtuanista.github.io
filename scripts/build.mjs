@@ -103,9 +103,9 @@ const md = `<div align="center">
 
 <p>${en ? '<a href="README.md">Español</a> · <b>English</b>' : '<b>Español</b> · <a href="README.en.md">English</a>'}</p>
 
-<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/vision-fija.webp"><img src="img/vision.webp" alt="VISIÓN" width="100%"></picture></a>
+<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/vision-fija.webp"><img src="img/vision.webp" alt="VISION" width="100%"></picture></a>
 
-<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><img alt="${en ? 'Try it free' : 'Probar gratis'}" src="https://img.shields.io/badge/VISIÓN-${en ? 'Try_it_free' : 'Probar_gratis'}-3fa9ff?style=for-the-badge"></a> <a href="https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}#precios"><img alt="${en ? 'Buy' : 'Comprar'}" src="https://img.shields.io/badge/VISIÓN-${en ? 'Buy' : 'Comprar'}-8b3fd9?style=for-the-badge"></a>
+<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><img alt="${en ? 'Try it free' : 'Probar gratis'}" src="https://img.shields.io/badge/VISION-${en ? 'Try_it_free' : 'Probar_gratis'}-3fa9ff?style=for-the-badge"></a> <a href="https://virtuanista.github.io/vision/pro/${en ? '?lang=en' : ''}#precios"><img alt="${en ? 'Buy' : 'Comprar'}" src="https://img.shields.io/badge/VISION-${en ? 'Buy' : 'Comprar'}-8b3fd9?style=for-the-badge"></a>
 
 ### ${t('Desarrollo · Tecnología · Inteligencia Artificial')}
 

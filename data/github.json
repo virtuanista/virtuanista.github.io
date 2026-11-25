@@ -1,12 +1,12 @@
 {
- "at": "2026-11-25T16:32:36.074Z",
+ "at": "2026-11-25T16:49:35.878Z",
  "repos": {
   "virtuanista/llmql": {
    "created": "2025-02-20T22:35:24Z",
    "pushed": "2026-11-25T15:36:17Z",
    "license": "MIT",
    "lang": {
-    "Python": 2621
+    "Python": 2957
    },
    "commits": 9,
    "last": [
@@ -39,7 +39,7 @@
    "pushed": "2026-11-25T15:56:59Z",
    "license": "MIT",
    "lang": {
-    "HTML": 13616,
+    "HTML": 17423,
     "Python": 4886
    },
    "commits": 10,
@@ -67,7 +67,7 @@
    ],
    "release": null,
    "ci": {
-    "ok": false,
+    "ok": true,
     "name": "Publicar en GitHub Pages",
     "u": "https://github.com/virtuanista/chatgpt-walker/actions/runs/45649912643"
    }
@@ -144,8 +144,8 @@
    "pushed": "2026-11-25T15:57:08Z",
    "license": "MIT",
    "lang": {
-    "JavaScript": 26948,
-    "HTML": 14636,
+    "JavaScript": 26989,
+    "HTML": 14646,
     "NSIS": 786
    },
    "commits": 18,
@@ -180,7 +180,7 @@
    "license": "Apache-2.0",
    "lang": {
     "JavaScript": 188653,
-    "HTML": 28315,
+    "HTML": 29000,
     "PowerShell": 16602,
     "VBScript": 2779
    },
@@ -335,7 +335,7 @@
    "pushed": "2026-11-25T15:36:26Z",
    "license": "MIT",
    "lang": {
-    "HTML": 6692,
+    "HTML": 8994,
     "JavaScript": 3709
    },
    "commits": 7,
@@ -430,7 +430,7 @@
    ],
    "release": null,
    "ci": {
-    "ok": false,
+    "ok": true,
     "name": "Publicar en GitHub Pages",
     "u": "https://github.com/virtuanista/isleta/actions/runs/45650435194"
    }
@@ -529,9 +529,9 @@
    ],
    "release": null,
    "ci": {
-    "ok": false,
+    "ok": true,
     "name": "pages build and deployment",
-    "u": "https://github.com/virtuanista/knowledge-atlas/actions/runs/45649917230"
+    "u": "https://github.com/virtuanista/knowledge-atlas/actions/runs/45647057891"
    }
   },
   "virtuanista/data-miner": {
@@ -706,13 +706,18 @@
   },
   "virtuanista/vision": {
    "created": "2026-11-25T13:26:05Z",
-   "pushed": "2026-11-25T16:32:34Z",
+   "pushed": "2026-11-25T16:49:35Z",
    "license": null,
    "lang": {
     "HTML": 26312
    },
-   "commits": 1,
+   "commits": 2,
    "last": [
+    {
+     "d": "2026-11-25T16:49:32Z",
+     "m": "VISION",
+     "u": "https://github.com/virtuanista/vision/commit/5c72b928bbeb159d8ed48b3c2f844b73326db068"
+    },
     {
      "d": "2026-11-25T16:32:32Z",
      "m": "VISIÓN",
@@ -723,7 +728,7 @@
    "ci": {
     "ok": true,
     "name": "pages build and deployment",
-    "u": "https://github.com/virtuanista/vision/actions/runs/45654998768"
+    "u": "https://github.com/virtuanista/vision/actions/runs/45658111042"
    }
   },
   "vxtop/prisma": {
@@ -732,7 +737,7 @@
    "license": "Apache-2.0",
    "lang": {
     "JavaScript": 282282,
-    "HTML": 23015,
+    "HTML": 29161,
     "PowerShell": 16613,
     "VBScript": 2786
    },
