@@ -105,7 +105,7 @@ const md = `<div align="center">
 
 <a href="https://mogub.app/"><picture><source media="(prefers-color-scheme: light)" srcset="img/mogub-claro.webp"><img src="img/mogub-oscuro.webp" alt="MOGUB: ${en ? 'all your AI, on your computer' : 'toda tu IA, en tu equipo'}" width="100%"></picture></a>
 
-<a href="https://mogub.app/instalar"><img alt="${en ? 'Install free' : 'Instalar gratis'}" src="https://img.shields.io/badge/MOGUB-${en ? 'Install_free' : 'Instalar_gratis'}-8b6cff?style=for-the-badge"></a> <a href="https://github.com/mogubstudio/mogub"><img alt="GitHub" src="https://img.shields.io/badge/MOGUB-GitHub-24292f?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://mogub.app/instalar"><img alt="${en ? 'Install free' : 'Instalar gratis'}" src="https://img.shields.io/badge/MOGUB-${en ? 'Install_free' : 'Instalar_gratis'}-8b6cff?style=for-the-badge"></a> <a href="https://www.npmjs.com/package/@mogub/mcp"><img alt="npm" src="https://img.shields.io/badge/MOGUB-npm-cb3837?style=for-the-badge&logo=npm&logoColor=white"></a> <a href="https://github.com/mogubstudio/mogub#conectar-por-mcp"><img alt="MCP" src="https://img.shields.io/badge/MOGUB-MCP-111111?style=for-the-badge&logo=modelcontextprotocol&logoColor=white"></a> <a href="https://github.com/mogubstudio/mogub"><img alt="GitHub" src="https://img.shields.io/badge/MOGUB-GitHub-24292f?style=for-the-badge&logo=github&logoColor=white"></a>
 
 ### ${t('Desarrollo · Tecnología · Inteligencia Artificial')}
 
