@@ -103,9 +103,9 @@ const md = `<div align="center">
 
 <p>${en ? '<a href="README.md">Español</a> · <b>English</b>' : '<b>Español</b> · <a href="README.en.md">English</a>'}</p>
 
-<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><picture><source media="(prefers-reduced-motion: reduce)" srcset="img/vision-fija.webp"><img src="img/vision.webp" alt="VISION" width="100%"></picture></a>
+<a href="https://mogub.app/"><picture><source media="(prefers-color-scheme: light)" srcset="img/mogub-claro.webp"><img src="img/mogub-oscuro.webp" alt="MOGUB: ${en ? 'all your AI, on your computer' : 'toda tu IA, en tu equipo'}" width="100%"></picture></a>
 
-<a href="https://virtuanista.github.io/vision/${en ? '?lang=en' : ''}"><img alt="${en ? 'Try it free' : 'Probar gratis'}" src="https://img.shields.io/badge/VISION-${en ? 'Try_it_free' : 'Probar_gratis'}-3fa9ff?style=for-the-badge"></a> <a href="https://virtuanista.itch.io/vision/purchase"><img alt="${en ? 'Buy' : 'Comprar'}" src="https://img.shields.io/badge/VISION-${en ? 'Buy' : 'Comprar'}-8b3fd9?style=for-the-badge"></a>
+<a href="https://mogub.app/instalar"><img alt="${en ? 'Install free' : 'Instalar gratis'}" src="https://img.shields.io/badge/MOGUB-${en ? 'Install_free' : 'Instalar_gratis'}-8b6cff?style=for-the-badge"></a> <a href="https://github.com/mogubstudio/mogub"><img alt="GitHub" src="https://img.shields.io/badge/MOGUB-GitHub-24292f?style=for-the-badge&logo=github&logoColor=white"></a>
 
 ### ${t('Desarrollo · Tecnología · Inteligencia Artificial')}
 
